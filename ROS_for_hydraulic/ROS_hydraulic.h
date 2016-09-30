@@ -4,30 +4,30 @@
 **
 ** 				 		       ZJU - 2015
 **
-** ÏµÍ³½éÉÜ£º
+** ç³»ç»Ÿä»‹ç»ï¼š
 **			 
-** ÏµÍ³ËµÃ÷£º
+** ç³»ç»Ÿè¯´æ˜ï¼š
 **
-** ÎÄ ¼ş Ãû£ºROS_hydraulic.h
-** Ä£ ¿é Ãû£ºÓÃÓÚ¶¨ÒåÒºÑ¹ÏµÍ³ÖĞÓÃµ½µÄ½á¹¹Ìå
-** ¹¦ÄÜÃèÊö£ºxxxxxxxxxxxxxxxx
-** ÆäËûËµÃ÷£º
+** æ–‡ ä»¶ åï¼šROS_hydraulic.h
+** æ¨¡ å— åï¼šç”¨äºå®šä¹‰æ¶²å‹ç³»ç»Ÿä¸­ç”¨åˆ°çš„ç»“æ„ä½“
+** åŠŸèƒ½æè¿°ï¼šxxxxxxxxxxxxxxxx
+** å…¶ä»–è¯´æ˜ï¼š
 **
-** ´´ ½¨ ÈË£ºÂ½ÕñÓî
-** ´´½¨Ê±¼ä£º2015-05-31
+** åˆ› å»º äººï¼šé™†æŒ¯å®‡
+** åˆ›å»ºæ—¶é—´ï¼š2015-05-31
 ** ----------------------------------------------------------------------------
-** ĞŞ ¸Ä ÈË£ºÂ½ÕñÓî
-** ĞŞ¸ÄÊ±¼ä£º2015-05-31
-** ĞŞ¸ÄËµÃ÷£º
+** ä¿® æ”¹ äººï¼šé™†æŒ¯å®‡
+** ä¿®æ”¹æ—¶é—´ï¼š2015-05-31
+** ä¿®æ”¹è¯´æ˜ï¼š
 ** ----------------------------------------------------------------------------
-** ĞŞ ¸Ä ÈË£ºÂ½ÕñÓî
-** ĞŞ¸ÄÊ±¼ä£º2015-05-31
-** ĞŞ¸ÄËµÃ÷£º
+** ä¿® æ”¹ äººï¼šé™†æŒ¯å®‡
+** ä¿®æ”¹æ—¶é—´ï¼š2015-05-31
+** ä¿®æ”¹è¯´æ˜ï¼š
 ** ----------------------------------------------------------------------------
 *******************************************************************************/	
 #ifndef __ROS_hydraulic__
 #define __ROS_hydraulic__
-/* ------------------------------Í·ÎÄ¼ş°üº¬-----------------------------------*/
+/* ------------------------------å¤´æ–‡ä»¶åŒ…å«-----------------------------------*/
 #include "stm32f10x.h"
 #include "stm32_eval.h"
 //#include "I2C.h"
@@ -36,20 +36,20 @@
 //#include "PID.h"
 //#include "IO.h"
 #include "Time_test.h"
-/* --------------------------------ºêÖ¸Áî-------------------------------------*/
-#define NCU_ROS_DEBUG 1					 //µ÷ÊÔ³ÌĞò
-#define NCU_ROS_ENABLE 1		 //»úÆ÷ÈË²Ù×÷ÏµÍ³Ê¹ÄÜ
-#define UCOSII_ROS_ENABLE 1	 	 //UCOSII²Ù×÷ÏµÍ³Ê¹ÄÜ
+/* --------------------------------å®æŒ‡ä»¤-------------------------------------*/
+#define NCU_ROS_DEBUG 1					 //è°ƒè¯•ç¨‹åº
+#define NCU_ROS_ENABLE 1		 //æœºå™¨äººæ“ä½œç³»ç»Ÿä½¿èƒ½
+#define UCOSII_ROS_ENABLE 1	 	 //UCOSIIæ“ä½œç³»ç»Ÿä½¿èƒ½
 
-#define ON TRUE	 	 //¿ª×´Ì¬
-#define OFF FALSE	 	 //¹Ø×´Ì¬
-/* ------------------------------½á¹¹Ìå¶¨Òå-----------------------------------*/
-/*Ö¸Ê¾µÆI/O¿Ú*/
+#define ON TRUE	 	 //å¼€çŠ¶æ€
+#define OFF FALSE	 	 //å…³çŠ¶æ€
+/* ------------------------------ç»“æ„ä½“å®šä¹‰-----------------------------------*/
+/*æŒ‡ç¤ºç¯I/Oå£*/
 //typedef struct	   
 //{
 //	uint8_t IndexLED_GPIO;
 //}IndexLED_InitTypeDef;
-/*Ö¸Ê¾µÆ*/
+/*æŒ‡ç¤ºç¯*/
 typedef struct
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -60,12 +60,12 @@ typedef struct
 	uint32_t Flash_Frequency;
 }IndexLED_TypeDef;
 
-/*·äÃùÆ÷I/O¿Ú*/
+/*èœ‚é¸£å™¨I/Oå£*/
 //typedef struct
 //{
 //	uint8_t Buzzer_GPIO;
 //}Buzzer_InitTypeDef;
-/*·äÃùÆ÷*/
+/*èœ‚é¸£å™¨*/
 typedef struct
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -74,12 +74,12 @@ typedef struct
 	uint8_t Buzz_Method;
 	uint32_t Buzz_Frequency;
 }Buzzer_TypeDef;
-/*±ÈÀıµç´ÅÌúI/O¿Ú*/
+/*æ¯”ä¾‹ç”µç£é“I/Oå£*/
 //typedef struct
 //{
 //	uint8_t PropertionalSolenoid_GPIO;
 //}PropertionalSolenoid_InitTypeDef;
-/*±ÈÀıµç´ÅÌú*/
+/*æ¯”ä¾‹ç”µç£é“*/
 typedef struct
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -98,7 +98,7 @@ typedef struct
 	uint8_t Index;
 }PropertionalSolenoid_TypeDef;
 
-/*ÏÈµ¼·§Ìå*/
+/*å…ˆå¯¼é˜€ä½“*/
 typedef struct
 {
 	uint8_t Valve_State;
@@ -110,7 +110,7 @@ typedef struct
 	uint32_t AreaGradient;
 }PilotValve_TypeDef;
 
-/*Ö÷·§Ìå*/
+/*ä¸»é˜€ä½“*/
 typedef struct
 {
 	uint8_t Valve_State;
@@ -123,12 +123,12 @@ typedef struct
 	uint32_t AreaGradient;
 }MainValve_TypeDef;
 
-/*LVDTÎ»ÒÆ´«¸ĞÆ÷I/O¿Ú*/
+/*LVDTä½ç§»ä¼ æ„Ÿå™¨I/Oå£*/
 //typedef struct
 //{
 //	uint8_t LVDT_Position_GPIO;
 //}LVDT_PositionSenser_InitTypeDef;
-/*LVDTÎ»ÒÆ´«¸ĞÆ÷*/
+/*LVDTä½ç§»ä¼ æ„Ÿå™¨*/
 typedef struct
 {
 //	GPIO_InitTypeDef GPIO_InitStructure;
@@ -136,12 +136,12 @@ typedef struct
 	int32_t Position;
 }LVDT_PositionSenser_TypeDef;
 
-/*Ñ¹Á¦´«¸ĞÆ÷I/O¿Ú*/
+/*å‹åŠ›ä¼ æ„Ÿå™¨I/Oå£*/
 //typedef struct
 //{
 //	uint8_t PressureSenser_GPIO;
 //}PressureSenser_InitTypeDef;
-/*Ñ¹Á¦´«¸ĞÆ÷*/
+/*å‹åŠ›ä¼ æ„Ÿå™¨*/
 typedef struct
 {
 //	GPIO_InitTypeDef GPIO_InitStructure;
@@ -150,12 +150,12 @@ typedef struct
    	uint8_t Index;
 }PressureSenser_TypeDef;
 
-/*ÎÂ¶È´«¸ĞÆ÷I/O¿Ú*/
+/*æ¸©åº¦ä¼ æ„Ÿå™¨I/Oå£*/
 //typedef struct
 //{
 //	uint8_t TemperatureSenser_GPIO;
 //}TemperatureSenser_InitTypeDef;
-/*ÎÂ¶È´«¸ĞÆ÷*/
+/*æ¸©åº¦ä¼ æ„Ÿå™¨*/
 typedef struct
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -163,7 +163,7 @@ typedef struct
 	uint32_t Temperature;
 }TemperatureSenser_TypeDef;
 
-/*µçÑ¹ĞÅºÅ¼ì²âĞÍ´«¸ĞÆ÷*/
+/*ç”µå‹ä¿¡å·æ£€æµ‹å‹ä¼ æ„Ÿå™¨*/
 typedef struct
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -171,7 +171,7 @@ typedef struct
 	uint32_t Voltage;
 }VoltageSenser_TypeDef;
 
-/*µçÆ½ĞÅºÅ¼ì²âĞÍ½Ó¿Ú*/
+/*ç”µå¹³ä¿¡å·æ£€æµ‹å‹æ¥å£*/
 typedef struct
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -180,21 +180,21 @@ typedef struct
 }VoltageLevel_TypeDef;
 
 
-/*PID¿ØÖÆËã·¨*/
+/*PIDæ§åˆ¶ç®—æ³•*/
 typedef struct
 {
-	int32_t	*Reference;	//Éè¶¨²Î¿¼Öµ
-	int32_t	*Real;		//µ±Ç°ÕæÊµÖµ
+	int32_t	*Reference;	//è®¾å®šå‚è€ƒå€¼
+	int32_t	*Real;		//å½“å‰çœŸå®å€¼
 	
-	float	KP;			//±ÈÀı³£Êı
-	float	KI;			//»ı·Ö³£Êı
-	float	KD;			//Î¢·Ö³£Êı
+	float	KP;			//æ¯”ä¾‹å¸¸æ•°
+	float	KI;			//ç§¯åˆ†å¸¸æ•°
+	float	KD;			//å¾®åˆ†å¸¸æ•°
 
-	int32_t Error;		 //µ±Ç°Îó²î
-	int32_t	LastError;   // Error[-1]  Ç°Ò»ÅÄÎó²î
-	int32_t PreError;    // Error[-2]  Ç°Á½ÅÄÎó²î
-	int32_t	SumError;	 //×ÜÆ«²îÖ®ºÍ
-	int32_t	DError;		 //Æ«²îÎ¢·Ö
+	int32_t Error;		 //å½“å‰è¯¯å·®
+	int32_t	LastError;   // Error[-1]  å‰ä¸€æ‹è¯¯å·®
+	int32_t PreError;    // Error[-2]  å‰ä¸¤æ‹è¯¯å·®
+	int32_t	SumError;	 //æ€»åå·®ä¹‹å’Œ
+	int32_t	DError;		 //åå·®å¾®åˆ†
 		
 	int32_t	KP_error;
 	int32_t KI_error;
@@ -203,22 +203,22 @@ typedef struct
 	float	Output;
 }PID_ControlParameters_TypeDef;
 
-/*Êı¾İ±í¶¨Òå*/
+/*æ•°æ®è¡¨å®šä¹‰*/
 typedef struct
 {
-	int32_t X[100];	 //´ÓĞ¡µ½´ó
-	int32_t Y[100];	 //´ÓĞ¡µ½´ó
+	int32_t X[100];	 //ä»å°åˆ°å¤§
+	int32_t Y[100];	 //ä»å°åˆ°å¤§
 	int32_t Z[100][100];
 }Mesh_TypeDef;
 
-/*Kalmanfilter½á¹¹Ìå¶¨Òå£¬¶ş½×*/
+/*Kalmanfilterç»“æ„ä½“å®šä¹‰ï¼ŒäºŒé˜¶*/
 typedef struct
 {
-	int32_t X[2];	 //´ÓĞ¡µ½´ó
-	int32_t P[2][2];	 //´ÓĞ¡µ½´ó
+	int32_t X[2];	 //ä»å°åˆ°å¤§
+	int32_t P[2][2];	 //ä»å°åˆ°å¤§
 }Kalmanfilter_TypeDef;
 
-/* ------------------------------È«¾Ö±äÁ¿-----------------------------------*/
+/* ------------------------------å…¨å±€å˜é‡-----------------------------------*/
 
 
 #endif
