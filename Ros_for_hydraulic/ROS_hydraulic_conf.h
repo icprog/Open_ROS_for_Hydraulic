@@ -4,30 +4,30 @@
 **
 ** 				 		       ZJU - 2015
 **
-** ÏµÍ³½éÉÜ£º
+** ç³»ç»Ÿä»‹ç»ï¼š
 **			 
-** ÏµÍ³ËµÃ÷£º
+** ç³»ç»Ÿè¯´æ˜ï¼š
 **
-** ÎÄ ¼ş Ãû£ºROS_hydraulic_conf.h
-** Ä£ ¿é Ãû£ºÓÃÓÚÅäÖÃÌØ¶¨ÒºÑ¹ÏµÍ³ÖĞµÄÆ÷¼şÈ«¾Ö±äÁ¿
-** ¹¦ÄÜÃèÊö£ºxxxxxxxxxxxxxxxx
-** ÆäËûËµÃ÷£º
+** æ–‡ ä»¶ åï¼šROS_hydraulic_conf.h
+** æ¨¡ å— åï¼šç”¨äºé…ç½®ç‰¹å®šæ¶²å‹ç³»ç»Ÿä¸­çš„å™¨ä»¶å…¨å±€å˜é‡
+** åŠŸèƒ½æè¿°ï¼šxxxxxxxxxxxxxxxx
+** å…¶ä»–è¯´æ˜ï¼š
 **
-** ´´ ½¨ ÈË£ºÂ½ÕñÓî
-** ´´½¨Ê±¼ä£º2015-05-31
+** åˆ› å»º äººï¼šé™†æŒ¯å®‡
+** åˆ›å»ºæ—¶é—´ï¼š2015-05-31
 ** ----------------------------------------------------------------------------
-** ĞŞ ¸Ä ÈË£ºÂ½ÕñÓî
-** ĞŞ¸ÄÊ±¼ä£º2015-05-31
-** ĞŞ¸ÄËµÃ÷£º
+** ä¿® æ”¹ äººï¼šé™†æŒ¯å®‡
+** ä¿®æ”¹æ—¶é—´ï¼š2015-05-31
+** ä¿®æ”¹è¯´æ˜ï¼š
 ** ----------------------------------------------------------------------------
-** ĞŞ ¸Ä ÈË£ºÂ½ÕñÓî
-** ĞŞ¸ÄÊ±¼ä£º2015-05-31
-** ĞŞ¸ÄËµÃ÷£º
+** ä¿® æ”¹ äººï¼šé™†æŒ¯å®‡
+** ä¿®æ”¹æ—¶é—´ï¼š2015-05-31
+** ä¿®æ”¹è¯´æ˜ï¼š
 ** ----------------------------------------------------------------------------
 *******************************************************************************/	
 #ifndef __ROS_hydraulic_conf__
 #define __ROS_hydraulic_conf__
-/* ------------------------------Í·ÎÄ¼ş°üº¬-----------------------------------*/
+/* ------------------------------å¤´æ–‡ä»¶åŒ…å«-----------------------------------*/
 #include "stm32f10x.h"
 #include "stm32_eval.h"
 //#include "stm3210e_eval.h"
@@ -59,37 +59,40 @@
 #include "ROS_hydraulic_Function_Realization.h"
 
 
-/* ------------------------------È«¾Ö±äÁ¿-----------------------------------*/
-/*ÎïÀíÆ÷¼ş*/
-extern IndexLED_TypeDef IndexLED_POWER;	/*¹©µçÖ¸Ê¾µÆ*/
-extern IndexLED_TypeDef IndexLED_A;	/*Aµç´ÅÌúÉÏµçÖ¸Ê¾µÆ*/
-extern IndexLED_TypeDef IndexLED_B;	/*Bµç´ÅÌúÉÏµçÖ¸Ê¾µÆ*/
-extern IndexLED_TypeDef IndexLED_Window;	/*¿ØÖÆÆ«²î ¡İ ÇøÓò£¨»ÆÉ«£©*/
-extern IndexLED_TypeDef IndexLED_Err;	/*³ö´íÖ¸Ê¾*/
-extern IndexLED_TypeDef IndexLED_Dx[5];  /*¶ş½øÖÆÊı×ÖÖ¸Ê¾*/
+/* ------------------------------å…¨å±€å˜é‡-----------------------------------*/
+/*ç‰©ç†å™¨ä»¶*/
+extern IndexLED_TypeDef IndexLED_POWER;	/*ä¾›ç”µæŒ‡ç¤ºç¯*/
+extern IndexLED_TypeDef IndexLED_A;	/*Aç”µç£é“ä¸Šç”µæŒ‡ç¤ºç¯*/
+extern IndexLED_TypeDef IndexLED_B;	/*Bç”µç£é“ä¸Šç”µæŒ‡ç¤ºç¯*/
+extern IndexLED_TypeDef IndexLED_Window;	/*æ§åˆ¶åå·® â‰¥ åŒºåŸŸï¼ˆé»„è‰²ï¼‰*/
+extern IndexLED_TypeDef IndexLED_Err;	/*å‡ºé”™æŒ‡ç¤º*/
+extern IndexLED_TypeDef IndexLED_Dx[5];  /*äºŒè¿›åˆ¶æ•°å­—æŒ‡ç¤º*/
 
-extern Buzzer_TypeDef Buzzer_Alarm;	/*·äÃùÆ÷*/
+extern Buzzer_TypeDef Buzzer_Alarm;	/*èœ‚é¸£å™¨*/
 
-extern PropertionalSolenoid_TypeDef SolenoidA;	/*±ÈÀıµç´ÅÌúA*/
-extern PropertionalSolenoid_TypeDef SolenoidB;	/*±ÈÀıµç´ÅÌúB*/
+extern PropertionalSolenoid_TypeDef SolenoidA;	/*æ¯”ä¾‹ç”µç£é“A*/
+extern PropertionalSolenoid_TypeDef SolenoidB;	/*æ¯”ä¾‹ç”µç£é“B*/
 
-extern PilotValve_TypeDef PilotValve;	/*ÏÈµ¼·§Ìå*/
-extern MainValve_TypeDef MainValve;	/*Ö÷·§Ìå*/
+extern PilotValve_TypeDef PilotValve;	/*å…ˆå¯¼é˜€ä½“*/
+extern MainValve_TypeDef MainValve;	/*ä¸»é˜€ä½“*/
 
-extern PressureSenser_TypeDef PressureSenser[3]; /*Ñ¹Á¦´«¸ĞÆ÷*/
+extern PressureSenser_TypeDef PressureSenser[3]; /*å‹åŠ›ä¼ æ„Ÿå™¨*/
 
-//extern TemperatureSenser_TypeDef TemperatureSenser; /*ÎÂ¶È´«¸ĞÆ÷*/
+//extern TemperatureSenser_TypeDef TemperatureSenser; /*æ¸©åº¦ä¼ æ„Ÿå™¨*/
 
 extern VoltageLevel_TypeDef InputSignal_Flag;
 
-/*¿ØÖÆ²ÎÊı*/
-extern PID_ControlParameters_TypeDef PID_SolenoidA_Current; /*PID¿ØÖÆ²ÎÊı*/
-extern PID_ControlParameters_TypeDef PID_SolenoidB_Current; /*PID¿ØÖÆ²ÎÊı*/
-extern PID_ControlParameters_TypeDef PID_MainValve_Position; /*PID¿ØÖÆ²ÎÊı*/
+/*æ§åˆ¶å‚æ•°*/
+extern PID_ControlParameters_TypeDef PID_SolenoidA_Current; /*PIDæ§åˆ¶å‚æ•°*/
+extern PID_ControlParameters_TypeDef PID_SolenoidB_Current; /*PIDæ§åˆ¶å‚æ•°*/
+extern PID_ControlParameters_TypeDef PID_MainValve_Position; /*PIDæ§åˆ¶å‚æ•°*/
 extern int32_t Init_PWM_duty_radio;	//3100=31%
 extern int32_t Init_Solenoid_Current;	//mA
 extern int32_t PWM_Period;
 extern int32_t Supply_Voltage;
+/*é€šä¿¡å‚æ•°*/
+extern char SendDataBuffer[20];//STM32å‘å‡ºæ•°æ®ç¼“å†²
+extern char RecieveDataBuffer[20];//STM32æ¥å—æ•°æ®ç¼“å†²
 
 void ROS_HY_SubElements_Conf(void);
 void ROS_HY_System_Conf(void);
