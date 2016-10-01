@@ -4,84 +4,88 @@
 **
 ** 				 		       ZJU - 2015
 **
-** ÏµÍ³½éÉÜ£º
+** ç³»ç»Ÿä»‹ç»ï¼š
 **			 
-** ÏµÍ³ËµÃ÷£º
+** ç³»ç»Ÿè¯´æ˜ï¼š
 **
-** ÎÄ ¼ş Ãû£ºROS_hydraulic_conf.h
-** Ä£ ¿é Ãû£ºÓÃÓÚÅäÖÃÌØ¶¨ÒºÑ¹ÏµÍ³ÖĞµÄ¿ØÖÆÓ²¼ş½á¹¹¼°Æ÷¼şÈ«¾Ö±äÁ¿²¢¸³³õÖµ
-** ¹¦ÄÜÃèÊö£ºxxxxxxxxxxxxxxxx
-** ÆäËûËµÃ÷£º
+** æ–‡ ä»¶ åï¼šROS_hydraulic_conf.h
+** æ¨¡ å— åï¼šç”¨äºé…ç½®ç‰¹å®šæ¶²å‹ç³»ç»Ÿä¸­çš„æ§åˆ¶ç¡¬ä»¶ç»“æ„åŠå™¨ä»¶å…¨å±€å˜é‡å¹¶èµ‹åˆå€¼
+** åŠŸèƒ½æè¿°ï¼šxxxxxxxxxxxxxxxx
+** å…¶ä»–è¯´æ˜ï¼š
 **
-** ´´ ½¨ ÈË£ºÂ½ÕñÓî
-** ´´½¨Ê±¼ä£º2015-05-31
+** åˆ› å»º äººï¼šé™†æŒ¯å®‡
+** åˆ›å»ºæ—¶é—´ï¼š2015-05-31
 ** ----------------------------------------------------------------------------
-** ĞŞ ¸Ä ÈË£ºÂ½ÕñÓî
-** ĞŞ¸ÄÊ±¼ä£º2015-05-31
-** ĞŞ¸ÄËµÃ÷£º
+** ä¿® æ”¹ äººï¼šé™†æŒ¯å®‡
+** ä¿®æ”¹æ—¶é—´ï¼š2015-05-31
+** ä¿®æ”¹è¯´æ˜ï¼š
 ** ----------------------------------------------------------------------------
-** ĞŞ ¸Ä ÈË£ºÂ½ÕñÓî
-** ĞŞ¸ÄÊ±¼ä£º2015-05-31
-** ĞŞ¸ÄËµÃ÷£º
+** ä¿® æ”¹ äººï¼šé™†æŒ¯å®‡
+** ä¿®æ”¹æ—¶é—´ï¼š2015-05-31
+** ä¿®æ”¹è¯´æ˜ï¼š
 ** ----------------------------------------------------------------------------
 *******************************************************************************/	
-/* ------------------------------Í·ÎÄ¼ş°üº¬-----------------------------------*/
+/* ------------------------------å¤´æ–‡ä»¶åŒ…å«-----------------------------------*/
 #include "ROS_hydraulic_conf.h"
-/* --------------------------------ºêÖ¸Áî-------------------------------------*/
+/* --------------------------------å®æŒ‡ä»¤-------------------------------------*/
 
-/* ---------------------------------È«¾Ö±äÁ¿----------------------------------*/
+/* ---------------------------------å…¨å±€å˜é‡----------------------------------*/
 
-/*ÎïÀíÆ÷¼ş*/
-IndexLED_TypeDef IndexLED_POWER;	/*¹©µçÖ¸Ê¾µÆ*/
-IndexLED_TypeDef IndexLED_A;	/*Aµç´ÅÌúÉÏµçÖ¸Ê¾µÆ*/
-IndexLED_TypeDef IndexLED_B;	/*Bµç´ÅÌúÉÏµçÖ¸Ê¾µÆ*/
-IndexLED_TypeDef IndexLED_Window;	/*¿ØÖÆÆ«²î ¡İ ÇøÓò£¨»ÆÉ«£©*/
-IndexLED_TypeDef IndexLED_Err;	/*³ö´íÖ¸Ê¾*/
-IndexLED_TypeDef IndexLED_Dx[5];  /*¶ş½øÖÆÊı×ÖÖ¸Ê¾*/
+/*ç‰©ç†å™¨ä»¶*/
+IndexLED_TypeDef IndexLED_POWER;	/*ä¾›ç”µæŒ‡ç¤ºç¯*/
+IndexLED_TypeDef IndexLED_A;	/*Aç”µç£é“ä¸Šç”µæŒ‡ç¤ºç¯*/
+IndexLED_TypeDef IndexLED_B;	/*Bç”µç£é“ä¸Šç”µæŒ‡ç¤ºç¯*/
+IndexLED_TypeDef IndexLED_Window;	/*æ§åˆ¶åå·® â‰¥ åŒºåŸŸï¼ˆé»„è‰²ï¼‰*/
+IndexLED_TypeDef IndexLED_Err;	/*å‡ºé”™æŒ‡ç¤º*/
+IndexLED_TypeDef IndexLED_Dx[5];  /*äºŒè¿›åˆ¶æ•°å­—æŒ‡ç¤º*/
 
-Buzzer_TypeDef Buzzer_Alarm;	/*·äÃùÆ÷*/
+Buzzer_TypeDef Buzzer_Alarm;	/*èœ‚é¸£å™¨*/
 
-PropertionalSolenoid_TypeDef SolenoidA;	/*±ÈÀıµç´ÅÌúA*/
-PropertionalSolenoid_TypeDef SolenoidB;	/*±ÈÀıµç´ÅÌúB*/
+PropertionalSolenoid_TypeDef SolenoidA;	/*æ¯”ä¾‹ç”µç£é“A*/
+PropertionalSolenoid_TypeDef SolenoidB;	/*æ¯”ä¾‹ç”µç£é“B*/
 
-PilotValve_TypeDef PilotValve;	/*ÏÈµ¼·§Ìå*/
-MainValve_TypeDef MainValve;	/*Ö÷·§Ìå*/
+PilotValve_TypeDef PilotValve;	/*å…ˆå¯¼é˜€ä½“*/
+MainValve_TypeDef MainValve;	/*ä¸»é˜€ä½“*/
 //LVDT_PositionSenser_TypeDef  MainValve_LVDT;
-PressureSenser_TypeDef PressureSenser[3]; /*Ñ¹Á¦´«¸ĞÆ÷*/
+PressureSenser_TypeDef PressureSenser[3]; /*å‹åŠ›ä¼ æ„Ÿå™¨*/
 
-//TemperatureSenser_TypeDef TemperatureSenser; /*ÎÂ¶È´«¸ĞÆ÷*/
+//TemperatureSenser_TypeDef TemperatureSenser; /*æ¸©åº¦ä¼ æ„Ÿå™¨*/
 
 VoltageLevel_TypeDef InputSignal_Flag;
 
-/*¿ØÖÆ²ÎÊı*/
-PID_ControlParameters_TypeDef PID_SolenoidA_Current; /*PID¿ØÖÆ²ÎÊı*/
-PID_ControlParameters_TypeDef PID_SolenoidB_Current; /*PID¿ØÖÆ²ÎÊı*/
-PID_ControlParameters_TypeDef PID_MainValve_Position; /*PID¿ØÖÆ²ÎÊı*/
+/*æ§åˆ¶å‚æ•°*/
+PID_ControlParameters_TypeDef PID_SolenoidA_Current; /*PIDæ§åˆ¶å‚æ•°*/
+PID_ControlParameters_TypeDef PID_SolenoidB_Current; /*PIDæ§åˆ¶å‚æ•°*/
+PID_ControlParameters_TypeDef PID_MainValve_Position; /*PIDæ§åˆ¶å‚æ•°*/
 
 
 int32_t Init_PWM_duty_radio=3100;	//3100=31%
 int32_t Init_Solenoid_Current=2000;	//mA
 int32_t PWM_Period=36000;//500;//14400~5kHz,36000~2kHz;
-int32_t Supply_Voltage=24;//µç´ÅÌú¹©µçµçÑ¹
+int32_t Supply_Voltage=24;//ç”µç£é“ä¾›ç”µç”µå‹
+/*é€šä¿¡å‚æ•°*/
+char SendDataBuffer[20];//STM32å‘å‡ºæ•°æ®ç¼“å†²
+char RecieveDataBuffer[20];//STM32æ¥å—æ•°æ®ç¼“å†²
 
-/* ---------------------------------¾²Ì¬±äÁ¿----------------------------------*/
 
-/* ----------------------------------º¯Êı-------------------------------------*/
+/* ---------------------------------é™æ€å˜é‡----------------------------------*/
+
+/* ----------------------------------å‡½æ•°-------------------------------------*/
 /********************************************************************************
-** º¯ Êı Ãû£ºXXXXXXXXXXX
-** ¹¦ÄÜÃèÊö£º³õÊ¼»¯ÌØ¶¨ÒºÑ¹¿ØÖÆÏµÍ³Æ÷¼ş¼°¿ØÖÆ°åÆ÷¼ş
-** ÆäËûËµÃ÷£ºXXXXXXXXXXXXXXXXXXXX
-** È«¾Ö±äÁ¿£º
-** µ÷ÓÃº¯Êı£º
-** Èë¿Ú²ÎÊı£º
-** ³ö¿Ú²ÎÊı£º
+** å‡½ æ•° åï¼šXXXXXXXXXXX
+** åŠŸèƒ½æè¿°ï¼šåˆå§‹åŒ–ç‰¹å®šæ¶²å‹æ§åˆ¶ç³»ç»Ÿå™¨ä»¶åŠæ§åˆ¶æ¿å™¨ä»¶
+** å…¶ä»–è¯´æ˜ï¼šXXXXXXXXXXXXXXXXXXXX
+** å…¨å±€å˜é‡ï¼š
+** è°ƒç”¨å‡½æ•°ï¼š
+** å…¥å£å‚æ•°ï¼š
+** å‡ºå£å‚æ•°ï¼š
 **
-** ×÷    Õß£ºÂ½ÕñÓî
-** ´´½¨Ê±¼ä£º2015-05-31
+** ä½œ    è€…ï¼šé™†æŒ¯å®‡
+** åˆ›å»ºæ—¶é—´ï¼š2015-05-31
 ** -------------------------------------------------------------------------------
-** ĞŞ ¸Ä ÈË£º
-** ĞŞ¸ÄÊ±¼ä£º
-** ĞŞ¸ÄËµÃ÷£º
+** ä¿® æ”¹ äººï¼š
+** ä¿®æ”¹æ—¶é—´ï¼š
+** ä¿®æ”¹è¯´æ˜ï¼š
 ** -------------------------------------------------------------------------------
 **********************************************************************************/
 void ROS_HY_SubElements_Conf(void)
@@ -249,44 +253,44 @@ void ROS_HY_SubElements_Conf(void)
 //	TemperatureSenser.GPIOX=GPIOC;
 //	TemperatureSenser.Temperature=0;
 
-	PID_SolenoidA_Current.Reference=&SolenoidA.Reference_Current;	//Éè¶¨²Î¿¼Öµ
-	PID_SolenoidA_Current.Real=&SolenoidA.Real_Current;		//µ±Ç°ÕæÊµÖµ
+	PID_SolenoidA_Current.Reference=&SolenoidA.Reference_Current;	//è®¾å®šå‚è€ƒå€¼
+	PID_SolenoidA_Current.Real=&SolenoidA.Real_Current;		//å½“å‰çœŸå®å€¼
 	ControlAlgorithm_PIDParmeters_Init(&PID_SolenoidA_Current);
 
-	PID_SolenoidA_Current.Reference=&SolenoidB.Reference_Current;	//Éè¶¨²Î¿¼Öµ
-	PID_SolenoidA_Current.Real=&SolenoidB.Real_Current;		//µ±Ç°ÕæÊµµ
+	PID_SolenoidA_Current.Reference=&SolenoidB.Reference_Current;	//è®¾å®šå‚è€ƒå€¼
+	PID_SolenoidA_Current.Real=&SolenoidB.Real_Current;		//å½“å‰çœŸå®ï¿½
 	ControlAlgorithm_PIDParmeters_Init(&PID_SolenoidB_Current);
 
-	PID_MainValve_Position.Reference=&MainValve.Spool_Position_Ref;	//Éè¶¨²Î¿¼Öµ
-	PID_MainValve_Position.Real=&MainValve.Spool_Position_Real;		//µ±Ç°ÕæÊµÖµ
+	PID_MainValve_Position.Reference=&MainValve.Spool_Position_Ref;	//è®¾å®šå‚è€ƒå€¼
+	PID_MainValve_Position.Real=&MainValve.Spool_Position_Real;		//å½“å‰çœŸå®å€¼
 	ControlAlgorithm_PIDParmeters_Init(&PID_MainValve_Position);
 }
 
 /********************************************************************************
-** º¯ Êı Ãû£ºXXXXXXXXXXX
-** ¹¦ÄÜÃèÊö£º³õÊ¼»¯ÌØ¶¨ÒºÑ¹¿ØÖÆÏµÍ³Æ÷¼ş¼°¿ØÖÆ°åÆ÷¼ş
-** ÆäËûËµÃ÷£ºXXXXXXXXXXXXXXXXXXXX
-** È«¾Ö±äÁ¿£º
-** µ÷ÓÃº¯Êı£º
-** Èë¿Ú²ÎÊı£º
-** ³ö¿Ú²ÎÊı£º
+** å‡½ æ•° åï¼šXXXXXXXXXXX
+** åŠŸèƒ½æè¿°ï¼šåˆå§‹åŒ–ç‰¹å®šæ¶²å‹æ§åˆ¶ç³»ç»Ÿå™¨ä»¶åŠæ§åˆ¶æ¿å™¨ä»¶
+** å…¶ä»–è¯´æ˜ï¼šXXXXXXXXXXXXXXXXXXXX
+** å…¨å±€å˜é‡ï¼š
+** è°ƒç”¨å‡½æ•°ï¼š
+** å…¥å£å‚æ•°ï¼š
+** å‡ºå£å‚æ•°ï¼š
 **
-** ×÷    Õß£ºÂ½ÕñÓî
-** ´´½¨Ê±¼ä£º2015-05-31
+** ä½œ    è€…ï¼šé™†æŒ¯å®‡
+** åˆ›å»ºæ—¶é—´ï¼š2015-05-31
 ** -------------------------------------------------------------------------------
-** ĞŞ ¸Ä ÈË£º
-** ĞŞ¸ÄÊ±¼ä£º
-** ĞŞ¸ÄËµÃ÷£º
+** ä¿® æ”¹ äººï¼š
+** ä¿®æ”¹æ—¶é—´ï¼š
+** ä¿®æ”¹è¯´æ˜ï¼š
 ** -------------------------------------------------------------------------------
 **********************************************************************************/
 void ROS_HY_System_Conf(void)
 { 	
-	/*STM32Ö÷¿ØĞ¾Æ¬ÅäÖÃ(ÖĞ¶Ï¼°¶¨Ê±,IO¿Ú,PWMµÈ)*/																	
+	/*STM32ä¸»æ§èŠ¯ç‰‡é…ç½®(ä¸­æ–­åŠå®šæ—¶,IOå£,PWMç­‰)*/																	
 	ROS_HY_Init_STM32();
 
-	/*¿ØÖÆÆ÷°å½Ó¿ÚÆ÷¼şÅäÖÃ³õÊ¼»¯*/
-	ROS_HY_SubElements_Conf();	//ÏµÍ³Æ÷¼şÅäÖÃ
-	ROS_HY_Init_SubElements();	//ÏµÍ³Æ÷¼ş³õÊ¼»¯
+	/*æ§åˆ¶å™¨æ¿æ¥å£å™¨ä»¶é…ç½®åˆå§‹åŒ–*/
+	ROS_HY_SubElements_Conf();	//ç³»ç»Ÿå™¨ä»¶é…ç½®
+	ROS_HY_Init_SubElements();	//ç³»ç»Ÿå™¨ä»¶åˆå§‹åŒ–
 //	IndexLED_Init(RCC_APB2Periph_GPIOC,&IndexLED_POWER);
 //	IndexLED_Init(RCC_APB2Periph_GPIOC,&IndexLED_A);
 //	IndexLED_Init(RCC_APB2Periph_GPIOC,&IndexLED_B);	
@@ -294,16 +298,16 @@ void ROS_HY_System_Conf(void)
 //	PropertionalSolenoid_Init(RCC_APB2Periph_GPIOC,&SolenoidB);
 //	PropertionalSolenoid_Init(RCC_APB2Periph_GPIOC,&SolenoidA);
 	
-	/*Í¨ĞÅ½Ó¿Ú³õÊ¼»¯*/
+	/*é€šä¿¡æ¥å£åˆå§‹åŒ–*/
 	ROS_HY_Init_Communication();
 
-	/*Ïà¹ØÍâÉèĞ¾Æ¬ÅäÖÃ*/
+	/*ç›¸å…³å¤–è®¾èŠ¯ç‰‡é…ç½®*/
 	ROS_HY_Init_PeriphChip();
 
-	/*Ïà¹ØÈÕÖ¾ÎÄ¼şÅäÖÃ*/
+	/*ç›¸å…³æ—¥å¿—æ–‡ä»¶é…ç½®*/
 	ROS_HY_Init_Log();
 
-	/*Íâ²¿ÌøÏß½Ó¿Ú¼ì²é*/
+	/*å¤–éƒ¨è·³çº¿æ¥å£æ£€æŸ¥*/
 	SubElements_IOLevel_Acquisition(&InputSignal_Flag);
 };
 
