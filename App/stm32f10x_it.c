@@ -143,15 +143,26 @@ void SysTick_Handler(void)
 
 
 /******************************************************************************/
-/* ´®¿ÚÖĞ¶ÏÈë¿Úº¯Êı    */   
+/* ä¸²å£ä¸­æ–­å…¥å£å‡½æ•°    */   
 /******************************************************************************/
 void USART1_IRQHandler(void)
 {
 	u8 c;
-	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
+	intt i=0;
+	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)//æ¥å—æ•°æ® 
 	{ 			  
-		c=USART1->DR;
-	} 	 
+		for(i=0;i<20;i++)
+		{
+			RecieveDataBuffer[i]=USART1->DR;
+		};
+	};
+	if(USART_GetITStatus(USART1, USART_IT_TXNE) != RESET)//å‘é€æ•°æ®
+	{ 			  
+		for(i=0;i<20;i++)
+		{
+			SendDataBuffer[i]=USART1->DR;
+		};
+	};	
 }
 /**
   * @brief  This function handles TIM2 interrupt request.
@@ -165,7 +176,7 @@ void TIM2_IRQHandler(void)
 		TIM_ClearITPendingBit(TIM2 , TIM_FLAG_Update);    
 		SubElements_IndexLED_Output(!IndexLED_A.IndexLED_State,&IndexLED_A);
 				
-		if	(SolenoidA.Flag==2) //±£Ö¤µç¸Ğ¼ÆËãÊ±£¬ÒÑ²É¼¯ÏÂ½µÑØµçÁ÷
+		if	(SolenoidA.Flag==2) //ä¿è¯ç”µæ„Ÿè®¡ç®—æ—¶ï¼Œå·²é‡‡é›†ä¸‹é™æ²¿ç”µæµ
 		{
 			SubElements_PropertionalSolenoid_GetInductance(&SolenoidA);
 		};
