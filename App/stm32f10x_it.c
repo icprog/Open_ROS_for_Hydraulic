@@ -164,6 +164,22 @@ void USART1_IRQHandler(void)
 		};
 	};	
 }
+
+void USART1_IRQHandler(void)//谢受浪撰写
+{
+	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
+	{ 			  
+		buf[id]=USART1->DR;
+		if (buf[id] == '\n') 
+		{
+			 return;
+		}
+		if (id >= sizeof(buf))
+			id = 0;
+		else
+			id ++;
+	} 	 
+}
 /**
   * @brief  This function handles TIM2 interrupt request.
   * @param  None
