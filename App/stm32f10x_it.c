@@ -147,22 +147,20 @@ void SysTick_Handler(void)
 /******************************************************************************/
 void USART1_IRQHandler(void)
 {
-	u8 c;
-	intt i=0;
-	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)//接受数据 
+//	Recieve_id=0;
+	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
 	{ 			  
-		for(i=0;i<20;i++)
+		RecieveDataBuffer[Recieve_id]=USART1->DR;
+		if (RecieveDataBuffer[Recieve_id] == '\n') 
 		{
-			RecieveDataBuffer[i]=USART1->DR;
-		};
-	};
-	if(USART_GetITStatus(USART1, USART_IT_TXNE) != RESET)//发送数据
-	{ 			  
-		for(i=0;i<20;i++)
-		{
-			SendDataBuffer[i]=USART1->DR;
-		};
-	};	
+			 Recieve_id = 0;
+			 return;
+		}
+		if (Recieve_id >= sizeof(RecieveDataBuffer))
+			Recieve_id = 0;
+		else
+			Recieve_id ++;
+	} 	
 }
 
 void USART1_IRQHandler(void)//谢受浪撰写
