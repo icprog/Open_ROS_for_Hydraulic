@@ -154,13 +154,17 @@ void USART1_IRQHandler(void)
 		if (RecieveDataBuffer[Recieve_id] == '\n') 
 		{
 			 Recieve_id = 0;
+			 Flag_New_Receive_Data=1;
 			 return;
 		}
 		if (Recieve_id >= sizeof(RecieveDataBuffer))
+		{
 			Recieve_id = 0;
+			Flag_New_Receive_Data=1;
+		}
 		else
 			Recieve_id ++;
-	} 	
+	} 	 
 }
 
 void USART1_IRQHandler(void)//谢受浪撰写
