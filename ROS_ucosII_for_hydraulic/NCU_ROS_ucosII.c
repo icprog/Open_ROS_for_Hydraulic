@@ -2,73 +2,73 @@
 **               		      NCU_Rotot_OS
 **							NCU_ROS_ucosII.c
 **
-** 				 		ƒœ≤˝¥Û—ßª˙∆˜»À∂” - 2012
+** 				 		ÂçóÊòåÂ§ßÂ≠¶Êú∫Âô®‰∫∫Èòü - 2012
 **
-** œµÕ≥ΩÈ…‹£∫
+** Á≥ªÁªü‰ªãÁªçÔºö
 **			 
-** œµÕ≥Àµ√˜£∫
+** Á≥ªÁªüËØ¥ÊòéÔºö
 **
-** Œƒ º˛ √˚£∫NCU_ROS_ucosII.c
-** ƒ£ øÈ √˚£∫…Ë÷√”Îucos”–πÿµƒ ¬º˛øÈ”Î»ŒŒÒ
-** π¶ƒ‹√Ë ˆ£∫…Ë÷√”Îucos”–πÿµƒ ¬º˛øÈ”Î»ŒŒÒ
-** ∆‰À˚Àµ√˜£∫
-** ¥¥ Ω® »À£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2012-02-19
+** Êñá ‰ª∂ ÂêçÔºöNCU_ROS_ucosII.c
+** Ê®° Âùó ÂêçÔºöËÆæÁΩÆ‰∏éucosÊúâÂÖ≥ÁöÑ‰∫ã‰ª∂Âùó‰∏é‰ªªÂä°
+** ÂäüËÉΩÊèèËø∞ÔºöËÆæÁΩÆ‰∏éucosÊúâÂÖ≥ÁöÑ‰∫ã‰ª∂Âùó‰∏é‰ªªÂä°
+** ÂÖ∂‰ªñËØ¥ÊòéÔºö
+** Âàõ Âª∫ ‰∫∫ÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2012-02-19
 ** ----------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫¬Ω’Ò”Ó
-** –ﬁ∏ƒ ±º‰£∫2012-02-19
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫ÔºöÈôÜÊåØÂÆá
+** ‰øÆÊîπÊó∂Èó¥Ôºö2012-02-19
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** ----------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫¬Ω’Ò”Ó
-** –ﬁ∏ƒ ±º‰£∫2012-02-19
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫ÔºöÈôÜÊåØÂÆá
+** ‰øÆÊîπÊó∂Èó¥Ôºö2012-02-19
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** ----------------------------------------------------------------------------
 *******************************************************************************/	
 
-/* ------------------------------Õ∑Œƒº˛∞¸∫¨-----------------------------------*/
+/* ------------------------------Â§¥Êñá‰ª∂ÂåÖÂê´-----------------------------------*/
 #include "includes.h"
 #include "NCU_ROS_ucosII.h"
-/* --------------------------------∫Í÷∏¡Ó-------------------------------------*/
+/* --------------------------------ÂÆèÊåá‰ª§-------------------------------------*/
 
-/* ---------------------------------»´æ÷±‰¡ø----------------------------------*/
+/* ---------------------------------ÂÖ®Â±ÄÂèòÈáè----------------------------------*/
 
-/* ---------------------------------æ≤Ã¨±‰¡ø----------------------------------*/
+/* ---------------------------------ÈùôÊÄÅÂèòÈáè----------------------------------*/
 
-/* --------------------------------uC/OS-II ¬º˛∂®“Â------------------------------------*/
+/* --------------------------------uC/OS-II‰∫ã‰ª∂ÂÆö‰πâ------------------------------------*/
 
-/* ¬º˛±Í÷æ◊ÈStat_*/
+/*‰∫ã‰ª∂Ê†áÂøóÁªÑStat_*/
 
-/*“¿æ›»ŒŒÒµƒ≤ªÕ¨ø…“‘…Ë÷√Œ™≤ªÕ¨µƒŒª£¨‘›…ËŒ™16Œª£¨º¥#define OS_FLAGS_NBITS 16*/
-/*1Œ™µΩ¥Ô£¨0Œ™√ª”–µΩ¥Ô£®◊¢“‚ÕÍ≥…∫Ûµƒ«Â≥˝£©*/
-//OS_FLAG_GRP *Stat_Impl_Task_Xx_Posi;	//÷¥––»ŒŒÒΩ·µ„µΩ¥Ô£®“‘ø’º‰»ŒŒÒ◊¯±ÍŒ™◊º£©
+/*‰æùÊçÆ‰ªªÂä°ÁöÑ‰∏çÂêåÂèØ‰ª•ËÆæÁΩÆ‰∏∫‰∏çÂêåÁöÑ‰ΩçÔºåÊöÇËÆæ‰∏∫16‰ΩçÔºåÂç≥#define OS_FLAGS_NBITS 16*/
+/*1‰∏∫Âà∞ËææÔºå0‰∏∫Ê≤°ÊúâÂà∞ËææÔºàÊ≥®ÊÑèÂÆåÊàêÂêéÁöÑÊ∏ÖÈô§Ôºâ*/
+//OS_FLAG_GRP *Stat_Impl_Task_Xx_Posi;	//ÊâßË°å‰ªªÂä°ÁªìÁÇπÂà∞ËææÔºà‰ª•Á©∫Èó¥‰ªªÂä°ÂùêÊ†á‰∏∫ÂáÜÔºâ
 
-/*–≈∫≈¡øSem_*/
-//≤…ºØ÷¥––¥´∏–∆˜ø™πÿ
-//OS_EVENT *Sem_Sens_Impl_Enco; //±‡¬Î∆˜
+/*‰ø°Âè∑ÈáèSem_*/
+//ÈááÈõÜÊâßË°å‰º†ÊÑüÂô®ÂºÄÂÖ≥
+//OS_EVENT *Sem_Sens_Impl_Enco; //ÁºñÁ†ÅÂô®
 
 
-/*ª•≥‚–≈∫≈¡øMute_*/
-//∂®“Âª•≥‚–≈∫≈¡øºÃ≥–”≈œ»º∂Œ™ #define PIP 10,≤…ºØŒª◊À¥´∏–∆˜ø™πÿ
-//OS_EVENT *Mute_Sens_Posi_Enco; //±‡¬Î∆˜
+/*‰∫íÊñ•‰ø°Âè∑ÈáèMute_*/
+//ÂÆö‰πâ‰∫íÊñ•‰ø°Âè∑ÈáèÁªßÊâø‰ºòÂÖàÁ∫ß‰∏∫ #define PIP 10,ÈááÈõÜ‰ΩçÂßø‰º†ÊÑüÂô®ÂºÄÂÖ≥
+//OS_EVENT *Mute_Sens_Posi_Enco; //ÁºñÁ†ÅÂô®
 
-/*œ˚œ¢” œ‰Sens_Data_*/
-//Œª◊À¥´∏–∆˜ ˝æ›
-//OS_EVENT *Mbox_Sens_Data_Posi_Enco; //±‡¬Î∆˜
+/*Ê∂àÊÅØÈÇÆÁÆ±Sens_Data_*/
+//‰ΩçÂßø‰º†ÊÑüÂô®Êï∞ÊçÆ
+//OS_EVENT *Mbox_Sens_Data_Posi_Enco; //ÁºñÁ†ÅÂô®
 
-/*œ˚œ¢∂”¡–Cont_data*/
-//ª˙∆˜»ÀŒª◊À ˝æ›
-//OS_EVENT *Q_Cont_Data_Posi_Enco; //±‡¬Î∆˜Œª◊À∂”¡–
+/*Ê∂àÊÅØÈòüÂàóCont_data*/
+//Êú∫Âô®‰∫∫‰ΩçÂßøÊï∞ÊçÆ
+//OS_EVENT *Q_Cont_Data_Posi_Enco; //ÁºñÁ†ÅÂô®‰ΩçÂßøÈòüÂàó
 
-//void *QMsg_Cont_Data_Posi_Enco[3]; //±‡¬Î∆˜Œª◊À∂”¡–œ˚œ¢÷∏’Î
+//void *QMsg_Cont_Data_Posi_Enco[3]; //ÁºñÁ†ÅÂô®‰ΩçÂßøÈòüÂàóÊ∂àÊÅØÊåáÈíà
 
-/*ƒ⁄¥Êπ‹¿ÌøÈ Map_;Task_*/
+/*ÂÜÖÂ≠òÁÆ°ÁêÜÂùó Map_;Task_*/
 //OS_MEM *Map_Mem;
 //float Map[1][1];
-//Map[n][k]=1Œ™x=n°¢y=k¥¶ø…Õ®––£¨Map[n][k]=0Œ™≤ªø…Õ®––£¨Map[n][k]=2Œ™∆¬µ¿
-//Map_Track[n][6]Œ™∏˙◊ŸπÏº££¨5∏ˆµ•‘™∑÷±Œ™◊¯±Íx,y,sida,øÿ÷∆∑Ω Ω£¨ÀŸ∂»£¨µ„∏¸–¬∑Ω Ω
-//Task[k][4]£¨kŒ™»ŒŒÒ–Ú∫≈£¨4∏ˆµ•‘™∑÷º”Œ™x,y,z◊¯±Í£¨“‘º∞÷¥––◊¥Ã¨
+//Map[n][k]=1‰∏∫x=n„ÄÅy=kÂ§ÑÂèØÈÄöË°åÔºåMap[n][k]=0‰∏∫‰∏çÂèØÈÄöË°åÔºåMap[n][k]=2‰∏∫Âù°ÈÅì
+//Map_Track[n][6]‰∏∫Ë∑üË∏™ËΩ®ËøπÔºå5‰∏™ÂçïÂÖÉÂàÜÂà´‰∏∫ÂùêÊ†áx,y,sida,ÊéßÂà∂ÊñπÂºèÔºåÈÄüÂ∫¶ÔºåÁÇπÊõ¥Êñ∞ÊñπÂºè
+//Task[k][4]Ôºåk‰∏∫‰ªªÂä°Â∫èÂè∑Ôºå4‰∏™ÂçïÂÖÉÂàÜÂä†‰∏∫x,y,zÂùêÊ†áÔºå‰ª•ÂèäÊâßË°åÁä∂ÊÄÅ
 
-/* --------------------------------uC/OS-II»ŒŒÒ∂—’ªø’º‰------------------------------------*/
+/* --------------------------------uC/OS-II‰ªªÂä°Â†ÜÊ†àÁ©∫Èó¥------------------------------------*/
 static OS_STK	OS_Task_Start_STK[OS_TASK_START_STK_SIZE];					  			
 static OS_STK   OS_Task_MonitorDiagnose_STK[OS_TASK_MonitorDiagnose_STK_SIZE]; 
 static OS_STK   OS_Task_ControlLawSwitch_STK[OS_TASK_ControlLawSwitch_STK_SIZE]; 
@@ -77,82 +77,82 @@ static OS_STK   OS_Task_Log_STK[OS_TASK_Log_STK_SIZE];
 static OS_STK   OS_Task_Communication_STK[OS_TASK_Communication_STK_SIZE];
  
                        							     
-/* ------------------------------∫Ø ˝‘≠–Õ…˘√˜---------------------------------*/
+/* ------------------------------ÂáΩÊï∞ÂéüÂûãÂ£∞Êòé---------------------------------*/
 
 /********************************************************************************
-** ∫Ø  ˝ √˚£∫void Robot_OS_Event_Create(void)
-** π¶ƒ‹√Ë ˆ£∫uC/OS-II ¬º˛¥¥Ω®
-** ∆‰À˚Àµ√˜£∫
-** »´æ÷±‰¡ø£∫
-** µ˜”√∫Ø ˝£∫
-** »Îø⁄≤Œ ˝£∫
-** ≥ˆø⁄≤Œ ˝£∫
+** ÂáΩ Êï∞ ÂêçÔºövoid Robot_OS_Event_Create(void)
+** ÂäüËÉΩÊèèËø∞ÔºöuC/OS-II‰∫ã‰ª∂ÂàõÂª∫
+** ÂÖ∂‰ªñËØ¥ÊòéÔºö
+** ÂÖ®Â±ÄÂèòÈáèÔºö
+** Ë∞ÉÁî®ÂáΩÊï∞Ôºö
+** ÂÖ•Âè£ÂèÇÊï∞Ôºö
+** Âá∫Âè£ÂèÇÊï∞Ôºö
 **
-** ◊˜    ’ﬂ£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2012-02-19
+** ‰Ωú    ËÄÖÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2012-02-19
 ** -------------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫
-** –ﬁ∏ƒ ±º‰£∫
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫Ôºö
+** ‰øÆÊîπÊó∂Èó¥Ôºö
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** -------------------------------------------------------------------------------
 **********************************************************************************/
 void Robot_OS_Event_Create(void)
 {
-	/* ¬º˛±Í÷æ◊ÈStat_*/
+	/*‰∫ã‰ª∂Ê†áÂøóÁªÑStat_*/
 //	INT8U err;
-//	Stat_Impl_Task_Xx_Posi=OSFlagCreate(0x0000,&err); //¥¥Ω®÷¥––»ŒŒÒΩ·µ„µΩ¥Ô±Í÷æ
+//	Stat_Impl_Task_Xx_Posi=OSFlagCreate(0x0000,&err); //ÂàõÂª∫ÊâßË°å‰ªªÂä°ÁªìÁÇπÂà∞ËææÊ†áÂøó
 	
-	/*–≈∫≈¡øSem_*/
+	/*‰ø°Âè∑ÈáèSem_*/
 //	Sem_Sens_Impl_Enco=OSSemCreate(0);
 
-	/*ª•≥‚–≈∫≈¡øMute_*/
+	/*‰∫íÊñ•‰ø°Âè∑ÈáèMute_*/
 //	Mute_Sens_Posi_Enco=OSMutexCreate(PIP,&err);
 
-    /*œ˚œ¢” œ‰Sens_Data_*/
-	//Œª◊À¥´∏–∆˜ ˝æ›
+    /*Ê∂àÊÅØÈÇÆÁÆ±Sens_Data_*/
+	//‰ΩçÂßø‰º†ÊÑüÂô®Êï∞ÊçÆ
 //	Mbox_Sens_Data_Posi_Enco=OSMboxCreate((void*)0);
 
 	
-	/*œ˚œ¢∂”¡–Cont_data*/
-	//ª˙∆˜»ÀŒª◊À ˝æ›
+	/*Ê∂àÊÅØÈòüÂàóCont_data*/
+	//Êú∫Âô®‰∫∫‰ΩçÂßøÊï∞ÊçÆ
 //	Q_Cont_Data_Posi_Enco=OSQCreate(&QMsg_Cont_Data_Posi_Enco[0],3);
 	
-	/*ƒ⁄¥Êπ‹¿ÌøÈ Map_;Task_*/
+	/*ÂÜÖÂ≠òÁÆ°ÁêÜÂùó Map_;Task_*/
 //	Map_Mem=OSMemCreate(&Map[1][1],1,1,&err);
 }
 /********************************************************************************
-** ∫Ø  ˝ √˚£∫int Robot_OS_Main(void)
-** π¶ƒ‹√Ë ˆ£∫ œµÕ≥Main∫Ø ˝
-** ∆‰À˚Àµ√˜£∫
-** »´æ÷±‰¡ø£∫
-** µ˜”√∫Ø ˝£∫
-** »Îø⁄≤Œ ˝£∫
-** ≥ˆø⁄≤Œ ˝£∫
+** ÂáΩ Êï∞ ÂêçÔºöint Robot_OS_Main(void)
+** ÂäüËÉΩÊèèËø∞Ôºö Á≥ªÁªüMainÂáΩÊï∞
+** ÂÖ∂‰ªñËØ¥ÊòéÔºö
+** ÂÖ®Â±ÄÂèòÈáèÔºö
+** Ë∞ÉÁî®ÂáΩÊï∞Ôºö
+** ÂÖ•Âè£ÂèÇÊï∞Ôºö
+** Âá∫Âè£ÂèÇÊï∞Ôºö
 **
-** ◊˜    ’ﬂ£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2012-02-19
+** ‰Ωú    ËÄÖÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2012-02-19
 ** -------------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫
-** –ﬁ∏ƒ ±º‰£∫
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫Ôºö
+** ‰øÆÊîπÊó∂Èó¥Ôºö
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** -------------------------------------------------------------------------------
 **********************************************************************************/
 int Robot_OS_Main(void)
 {
 	uint8_t  os_err;	
 /*
- * ◊¢“‚: ¥À ±MCU“—‘⁄∆Ù∂ØŒƒº˛startup_stm32f10x_xx.s÷–Õ®π˝µ˜”√system_stm32f10x.c
- * ÷–µƒSystemInit()∫Ø ˝∂‘CPU ±÷”∫Õ◊‹œﬂ ±÷”Ω¯––¡À≥ı ºªØ£¨»Á–Ë∏ƒ∂Ø≥ı º ±÷”≈‰÷√
- * «ÎµΩsystem_stm32f10x.cŒƒº˛µƒœ‡”¶¥¶–ﬁ∏ƒ°£
+ * Ê≥®ÊÑè: Ê≠§Êó∂MCUÂ∑≤Âú®ÂêØÂä®Êñá‰ª∂startup_stm32f10x_xx.s‰∏≠ÈÄöËøáË∞ÉÁî®system_stm32f10x.c
+ * ‰∏≠ÁöÑSystemInit()ÂáΩÊï∞ÂØπCPUÊó∂ÈíüÂíåÊÄªÁ∫øÊó∂ÈíüËøõË°å‰∫ÜÂàùÂßãÂåñÔºåÂ¶ÇÈúÄÊîπÂä®ÂàùÂßãÊó∂ÈíüÈÖçÁΩÆ
+ * ËØ∑Âà∞system_stm32f10x.cÊñá‰ª∂ÁöÑÁõ∏Â∫îÂ§Ñ‰øÆÊîπ„ÄÇ
  */
  	
-	/* πÿ±’À˘”–÷–∂œ */
+	/* ÂÖ≥Èó≠ÊâÄÊúâ‰∏≠Êñ≠ */
 	BSP_IntDisAll();
 	
-	/* ≥ı ºªØ≤Ÿ◊˜œµÕ≥ */
+	/* ÂàùÂßãÂåñÊìç‰ΩúÁ≥ªÁªü */
 	OSInit();
 	
-	/* ¥¥Ω®œµÕ≥∆Ù∂Ø»ŒŒÒ */
+	/* ÂàõÂª∫Á≥ªÁªüÂêØÂä®‰ªªÂä° */
 	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_Start,
 	                         (void          * ) 0,
 	                         (OS_STK        * )&OS_Task_Start_STK[OS_TASK_START_STK_SIZE - 1],
@@ -167,119 +167,119 @@ int Robot_OS_Main(void)
 	OSTaskNameSet(OS_TASK_START_PRIO, (uint8_t *)"Start Task", &os_err);
 #endif
 	
-	/* ∆Ù∂Ø≤Ÿ◊˜œµÕ≥°£◊¢“‚∆Ù∂Ø≤Ÿ◊˜œµÕ≥«∞±ÿ–Î¥¥Ω®÷¡…Ÿ“ª∏ˆ»ŒŒÒ */
+	/* ÂêØÂä®Êìç‰ΩúÁ≥ªÁªü„ÄÇÊ≥®ÊÑèÂêØÂä®Êìç‰ΩúÁ≥ªÁªüÂâçÂøÖÈ°ªÂàõÂª∫Ëá≥Â∞ë‰∏Ä‰∏™‰ªªÂä° */
 	OSStart();
 	return (0);
 }
 
 /********************************************************************************
-**                          Rtask_TaskStart »ŒŒÒ
+**                          Rtask_TaskStart ‰ªªÂä°
 **
-** »ŒŒÒπ¶ƒ‹£∫∆Ù∂Ø»ŒŒÒ
-** »ŒŒÒÀµ√˜£∫∆Ù∂Ø’˚∏ˆœµÕ≥£¨≤¢Ω¯––œµÕ≥≥ı ºªØ∫Õ¥¥Ω®œµÕ≥µƒ±ÿ“™»ŒŒÒ∫Õ ¬º˛
-** œµÕ≥◊ ‘¥£∫
+** ‰ªªÂä°ÂäüËÉΩÔºöÂêØÂä®‰ªªÂä°
+** ‰ªªÂä°ËØ¥ÊòéÔºöÂêØÂä®Êï¥‰∏™Á≥ªÁªüÔºåÂπ∂ËøõË°åÁ≥ªÁªüÂàùÂßãÂåñÂíåÂàõÂª∫Á≥ªÁªüÁöÑÂøÖË¶Å‰ªªÂä°Âíå‰∫ã‰ª∂
+** Á≥ªÁªüËµÑÊ∫êÔºö
 **
-** ¥¥ Ω® »À£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2012-03-26
+** Âàõ Âª∫ ‰∫∫ÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2012-03-26
 ** ------------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫
-** –ﬁ∏ƒ ±º‰£∫
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫Ôºö
+** ‰øÆÊîπÊó∂Èó¥Ôºö
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** ------------------------------------------------------------------------------
 *********************************************************************************/
 static void OS_Task_Start(void *P_arg)
 {			   
 	(void)P_arg;
 
-	/* ª˘±æ”≤º˛µƒ≥ı ºªØ */
-//	ROS_HY_System_Conf(); //¥À∫Ø ˝≤ªƒ‹∑≈‘⁄uCOS≤Ÿ◊˜œµÕ≥÷–‘À––£¨∑Ò‘Ú≤ª≥…π¶
+	/* Âü∫Êú¨Á°¨‰ª∂ÁöÑÂàùÂßãÂåñ */
+//	ROS_HY_System_Conf(); //Ê≠§ÂáΩÊï∞‰∏çËÉΩÊîæÂú®uCOSÊìç‰ΩúÁ≥ªÁªü‰∏≠ËøêË°åÔºåÂê¶Âàô‰∏çÊàêÂäü
 	
-	/* ≈‰÷√œµÕ≥Ω⁄≈ƒ∂® ±∆˜ */
+	/* ÈÖçÁΩÆÁ≥ªÁªüËäÇÊãçÂÆöÊó∂Âô® */
   	BSP_SysTickConfig(); 
 
-	/* »Áπ˚ πƒ‹¡ÀÕ≥º∆»ŒŒÒ‘Ú≥ı ºªØÕ≥º∆»ŒŒÒ */
+	/* Â¶ÇÊûú‰ΩøËÉΩ‰∫ÜÁªüËÆ°‰ªªÂä°ÂàôÂàùÂßãÂåñÁªüËÆ°‰ªªÂä° */
 #if (OS_TASK_STAT_EN > 0)
   	OSStatInit();
 #endif
 	
-	/* ¥¥Ω®À˘”– ¬º˛∫Õ”√ªß»ŒŒÒ */
+	/* ÂàõÂª∫ÊâÄÊúâ‰∫ã‰ª∂ÂíåÁî®Êà∑‰ªªÂä° */
    	Robot_OS_Event_Create();
   	Robot_OS_Tasks_Create();
   
 #ifdef DEBUG
   	printf("\rRtask_Task        : start!\n");
 #endif	    
-  /* …æ≥˝◊‘º∫ */
+  /* Âà†Èô§Ëá™Â∑± */
   	OSTaskDel(OS_PRIO_SELF);
 
 }
 /********************************************************************************
-** ∫Ø  ˝ √˚£∫Robot_OS_Tasks_Create()
-** π¶ƒ‹√Ë ˆ£∫¥¥Ω®À˘”–”√ªß»ŒŒÒ
-** ∆‰À˚Àµ√˜£∫
-** ¥¥Ω®»ŒŒÒ£∫ 
+** ÂáΩ Êï∞ ÂêçÔºöRobot_OS_Tasks_Create()
+** ÂäüËÉΩÊèèËø∞ÔºöÂàõÂª∫ÊâÄÊúâÁî®Êà∑‰ªªÂä°
+** ÂÖ∂‰ªñËØ¥ÊòéÔºö
+** ÂàõÂª∫‰ªªÂä°Ôºö 
 **           
-** µ˜”√∫Ø ˝£∫OSTaskCreateExt, OSTaskNameSet
-** »Îø⁄≤Œ ˝£∫
-** ≥ˆø⁄≤Œ ˝£∫
+** Ë∞ÉÁî®ÂáΩÊï∞ÔºöOSTaskCreateExt, OSTaskNameSet
+** ÂÖ•Âè£ÂèÇÊï∞Ôºö
+** Âá∫Âè£ÂèÇÊï∞Ôºö
 **
-** ◊˜    ’ﬂ£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2011-04-17
+** ‰Ωú    ËÄÖÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2011-04-17
 ** -------------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫
-** –ﬁ∏ƒ ±º‰£∫
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫Ôºö
+** ‰øÆÊîπÊó∂Èó¥Ôºö
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** -------------------------------------------------------------------------------
 **********************************************************************************/
 static void Robot_OS_Tasks_Create(void)
 {
   uint8_t  os_err;
-	/* ¥¥Ω®»Àº‡≤‚”Î’Ô∂œø⁄»ŒŒÒ£¨”≈œ»º∂Œ™(OS_LOWEST_PRIO - 10) */
-  	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_MonitorDiagnose,
-                           (void          * ) 0,
-                           (OS_STK        * )&OS_Task_MonitorDiagnose_STK[OS_TASK_MonitorDiagnose_STK_SIZE-1],
-                           (uint8_t         ) OS_TASK_MonitorDiagnose_PRIO ,
-                           (uint16_t        ) OS_TASK_MonitorDiagnose_PRIO,
-                           (OS_STK        * )&OS_Task_MonitorDiagnose_STK[0],
-                           (uint32_t        ) OS_TASK_MonitorDiagnose_STK_SIZE,
-                           (void          * ) 0,
-                           (uint16_t        )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
-
-#if (OS_TASK_NAME_SIZE >= 13)
-	OSTaskNameSet(RTASK_KEYBOARD_PRIO, "KeyBoard Task", &os_err);
-#endif
-	/* ¥¥Ω®øÿ÷∆≤ﬂ¬‘µ˜’˚”Î«–ªª»ŒŒÒ£¨”≈œ»º∂Œ™(OS_LOWEST_PRIO - 10) */
-  	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_ControlLawSwitch,
-                           (void          * ) 0,
-                           (OS_STK        * )&OS_Task_ControlLawSwitch_STK[OS_TASK_ControlLawSwitch_STK_SIZE-1],
-                           (uint8_t         ) OS_TASK_ControlLawSwitch_PRIO ,
-                           (uint16_t        ) OS_TASK_ControlLawSwitch_PRIO,
-                           (OS_STK        * )&OS_Task_ControlLawSwitch_STK[0],
-                           (uint32_t        ) OS_TASK_ControlLawSwitch_STK_SIZE,
-                           (void          * ) 0,
-                           (uint16_t        )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
-
-#if (OS_TASK_NAME_SIZE >= 13)
-	OSTaskNameSet(RTASK_KEYBOARD_PRIO, "KeyBoard Task", &os_err);
-#endif
-//	/* ¥¥Ω®≤Œ ˝±Í∂®»ŒŒÒ£¨”≈œ»º∂Œ™(OS_LOWEST_PRIO - 10) */
-//  	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_ParameterCalibrationTuning,
+//	/* ÂàõÂª∫‰∫∫ÁõëÊµã‰∏éËØäÊñ≠Âè£‰ªªÂä°Ôºå‰ºòÂÖàÁ∫ß‰∏∫(OS_LOWEST_PRIO - 10) */
+//  	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_MonitorDiagnose,
 //                           (void          * ) 0,
-//                           (OS_STK        * )&OS_Task_ParameterCalibrationTuning_STK[OS_TASK_ParameterCalibrationTuning_STK_SIZE],
-//                           (uint8_t         ) OS_TASK_ParameterCalibrationTuning_PRIO ,
-//                           (uint16_t        ) OS_TASK_ParameterCalibrationTuning_PRIO,
-//                           (OS_STK        * )&OS_Task_ParameterCalibrationTuning_STK[0],
-//                           (uint32_t        ) OS_TASK_ParameterCalibrationTuning_STK_SIZE,
+//                           (OS_STK        * )&OS_Task_MonitorDiagnose_STK[OS_TASK_MonitorDiagnose_STK_SIZE-1],
+//                           (uint8_t         ) OS_TASK_MonitorDiagnose_PRIO ,
+//                           (uint16_t        ) OS_TASK_MonitorDiagnose_PRIO,
+//                           (OS_STK        * )&OS_Task_MonitorDiagnose_STK[0],
+//                           (uint32_t        ) OS_TASK_MonitorDiagnose_STK_SIZE,
 //                           (void          * ) 0,
 //                           (uint16_t        )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
 //
 //#if (OS_TASK_NAME_SIZE >= 13)
 //	OSTaskNameSet(RTASK_KEYBOARD_PRIO, "KeyBoard Task", &os_err);
 //#endif
-//	/* ¥¥Ω®»’÷æº«¬º»ŒŒÒ£¨”≈œ»º∂Œ™(OS_LOWEST_PRIO - 10) */
+//	/* ÂàõÂª∫ÊéßÂà∂Á≠ñÁï•Ë∞ÉÊï¥‰∏éÂàáÊç¢‰ªªÂä°Ôºå‰ºòÂÖàÁ∫ß‰∏∫(OS_LOWEST_PRIO - 10) */
+//  	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_ControlLawSwitch,
+//                           (void          * ) 0,
+//                           (OS_STK        * )&OS_Task_ControlLawSwitch_STK[OS_TASK_ControlLawSwitch_STK_SIZE-1],
+//                           (uint8_t         ) OS_TASK_ControlLawSwitch_PRIO ,
+//                           (uint16_t        ) OS_TASK_ControlLawSwitch_PRIO,
+//                           (OS_STK        * )&OS_Task_ControlLawSwitch_STK[0],
+//                           (uint32_t        ) OS_TASK_ControlLawSwitch_STK_SIZE,
+//                           (void          * ) 0,
+//                           (uint16_t        )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
+//
+//#if (OS_TASK_NAME_SIZE >= 13)
+//	OSTaskNameSet(RTASK_KEYBOARD_PRIO, "KeyBoard Task", &os_err);
+//#endif
+	/* ÂàõÂª∫ÂèÇÊï∞Ê†áÂÆö‰ªªÂä°Ôºå‰ºòÂÖàÁ∫ß‰∏∫(OS_LOWEST_PRIO - 10) */
+  	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_ParameterCalibrationTuning,
+                           (void          * ) 0,
+                           (OS_STK        * )&OS_Task_ParameterCalibrationTuning_STK[OS_TASK_ParameterCalibrationTuning_STK_SIZE-1],
+                           (uint8_t         ) OS_TASK_ParameterCalibrationTuning_PRIO ,
+                           (uint16_t        ) OS_TASK_ParameterCalibrationTuning_PRIO,
+                           (OS_STK        * )&OS_Task_ParameterCalibrationTuning_STK[0],
+                           (uint32_t        ) OS_TASK_ParameterCalibrationTuning_STK_SIZE,
+                           (void          * ) 0,
+                           (uint16_t        )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
+
+#if (OS_TASK_NAME_SIZE >= 13)
+	OSTaskNameSet(RTASK_KEYBOARD_PRIO, "KeyBoard Task", &os_err);
+#endif
+//	/* ÂàõÂª∫Êó•ÂøóËÆ∞ÂΩï‰ªªÂä°Ôºå‰ºòÂÖàÁ∫ß‰∏∫(OS_LOWEST_PRIO - 10) */
 //  	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_Log,
 //                           (void          * ) 0,
-//                           (OS_STK        * )&OS_Task_Log_STK[OS_TASK_Log_STK_SIZE],
+//                           (OS_STK        * )&OS_Task_Log_STK[OS_TASK_Log_STK_SIZE-1],
 //                           (uint8_t         ) OS_TASK_Log_PRIO ,
 //                           (uint16_t        ) OS_TASK_Log_PRIO,
 //                           (OS_STK        * )&OS_Task_Log_STK[0],
@@ -290,44 +290,44 @@ static void Robot_OS_Tasks_Create(void)
 //#if (OS_TASK_NAME_SIZE >= 13)
 //	OSTaskNameSet(RTASK_KEYBOARD_PRIO, "KeyBoard Task", &os_err);
 //#endif
-//	/* ¥¥Ω®Õ®–≈»ŒŒÒ£¨”≈œ»º∂Œ™(OS_LOWEST_PRIO - 10) */
-//  	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_Communication,
-//                           (void          * ) 0,
-//                           (OS_STK        * )&OS_Task_Communication_STK[OS_TASK_Communication_STK_SIZE],
-//                           (uint8_t         ) OS_TASK_Communication_PRIO ,
-//                           (uint16_t        ) OS_TASK_Communication_PRIO,
-//                           (OS_STK        * )&OS_Task_Communication_STK[0],
-//                           (uint32_t        ) OS_TASK_Communication_STK_SIZE,
-//                           (void          * ) 0,
-//                           (uint16_t        )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
-//
-//#if (OS_TASK_NAME_SIZE >= 13)
-//	OSTaskNameSet(RTASK_KEYBOARD_PRIO, "KeyBoard Task", &os_err);
-//#endif
+	/* ÂàõÂª∫ÈÄö‰ø°‰ªªÂä°Ôºå‰ºòÂÖàÁ∫ß‰∏∫(OS_LOWEST_PRIO - 10) */
+  	os_err = OSTaskCreateExt((void (*)(void *)) OS_Task_Communication,
+                           (void          * ) 0,
+                           (OS_STK        * )&OS_Task_Communication_STK[OS_TASK_Communication_STK_SIZE-1],
+                           (uint8_t         ) OS_TASK_Communication_PRIO ,
+                           (uint16_t        ) OS_TASK_Communication_PRIO,
+                           (OS_STK        * )&OS_Task_Communication_STK[0],
+                           (uint32_t        ) OS_TASK_Communication_STK_SIZE,
+                           (void          * ) 0,
+                           (uint16_t        )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
+
+#if (OS_TASK_NAME_SIZE >= 13)
+	OSTaskNameSet(RTASK_KEYBOARD_PRIO, "KeyBoard Task", &os_err);
+#endif
 }
 
 /********************************************************************************
-**                          OS_Task_MonitorDiagnose »ŒŒÒ
+**                          OS_Task_MonitorDiagnose ‰ªªÂä°
 **
-** »ŒŒÒπ¶ƒ‹£∫º‡≤‚”Î’Ô∂œ»ŒŒÒ
-** »ŒŒÒÀµ√˜£∫º‡≤‚”Î’Ô∂œ»ŒŒÒ
-** œµÕ≥◊ ‘¥£∫
+** ‰ªªÂä°ÂäüËÉΩÔºöÁõëÊµã‰∏éËØäÊñ≠‰ªªÂä°
+** ‰ªªÂä°ËØ¥ÊòéÔºöÁõëÊµã‰∏éËØäÊñ≠‰ªªÂä°
+** Á≥ªÁªüËµÑÊ∫êÔºö
 **
-** ¥¥ Ω® »À£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2012-03-26
+** Âàõ Âª∫ ‰∫∫ÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2012-03-26
 ** ------------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫
-** –ﬁ∏ƒ ±º‰£∫
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫Ôºö
+** ‰øÆÊîπÊó∂Èó¥Ôºö
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** ------------------------------------------------------------------------------
 *********************************************************************************/
 static void OS_Task_MonitorDiagnose(void *P_arg)
 {
-	/* ±‰¡ø∂®“Â */
+	/* ÂèòÈáèÂÆö‰πâ */
 	uint8_t err;
 	(void)P_arg;
 		
-	/* ≥¨º∂—≠ª∑*/
+	/* Ë∂ÖÁ∫ßÂæ™ÁéØ*/
 	while (DEF_TRUE)
 	{
 //		OSSchedLock();
@@ -337,7 +337,7 @@ static void OS_Task_MonitorDiagnose(void *P_arg)
     	OS_CPU_SR  cpu_sr;
 		OS_ENTER_CRITICAL();
 		SubElements_IndexLED_Output(!IndexLED_Dx[3].IndexLED_State,&IndexLED_Dx[3]);
-		printf("MonitorDiagnose: start!\n");
+//		printf("MonitorDiagnose: start!\n");
 		OS_EXIT_CRITICAL(); 
 //		OSSchedUnlock();
 		OSTimeDlyHMSM(0, 0, 0, 1000);
@@ -346,34 +346,34 @@ static void OS_Task_MonitorDiagnose(void *P_arg)
 }
 
 /********************************************************************************
-**                          OS_Task_ControlLawSwitch »ŒŒÒ
+**                          OS_Task_ControlLawSwitch ‰ªªÂä°
 **
-** »ŒŒÒπ¶ƒ‹£∫øÿ÷∆≤ﬂ¬‘µ˜’˚”Î«–ªª
-** »ŒŒÒÀµ√˜£∫øÿ÷∆≤ﬂ¬‘µ˜’˚”Î«–ªª
-** œµÕ≥◊ ‘¥£∫
+** ‰ªªÂä°ÂäüËÉΩÔºöÊéßÂà∂Á≠ñÁï•Ë∞ÉÊï¥‰∏éÂàáÊç¢
+** ‰ªªÂä°ËØ¥ÊòéÔºöÊéßÂà∂Á≠ñÁï•Ë∞ÉÊï¥‰∏éÂàáÊç¢
+** Á≥ªÁªüËµÑÊ∫êÔºö
 **
-** ¥¥ Ω® »À£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2012-03-26
+** Âàõ Âª∫ ‰∫∫ÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2012-03-26
 ** ------------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫
-** –ﬁ∏ƒ ±º‰£∫
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫Ôºö
+** ‰øÆÊîπÊó∂Èó¥Ôºö
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** ------------------------------------------------------------------------------
 *********************************************************************************/
 static void OS_Task_ControlLawSwitch(void *P_arg)
 {
-	/* ±‰¡ø∂®“Â */
+	/* ÂèòÈáèÂÆö‰πâ */
 	uint8_t err;
 	(void)P_arg;
 		
-	/* ≥¨º∂—≠ª∑*/
+	/* Ë∂ÖÁ∫ßÂæ™ÁéØ*/
 	while (DEF_TRUE)
 	{
 //		OSSchedLock();
     	OS_CPU_SR  cpu_sr;
 		OS_ENTER_CRITICAL();
 //		#if (NCU_ROS_DEBUG>0)
-			printf("ControlLawSwitch: start!\n");
+//			printf("ControlLawSwitch: start!\n");
 //		#endif
 		SubElements_IndexLED_Output(!IndexLED_Dx[4].IndexLED_State,&IndexLED_Dx[4]);
 //		OSSchedUnlock();
@@ -383,59 +383,228 @@ static void OS_Task_ControlLawSwitch(void *P_arg)
 }
 
 /********************************************************************************
-**                          OS_Task_ParameterCalibrationTuning »ŒŒÒ
+**                          OS_Task_ParameterCalibrationTuning ‰ªªÂä°
 **
-** »ŒŒÒπ¶ƒ‹£∫÷«ƒ‹≤Œ ˝±Í∂®”Îøÿ÷∆≤Œ ˝◊‘’˚∂®
-** »ŒŒÒÀµ√˜£∫÷«ƒ‹≤Œ ˝±Í∂®”Îøÿ÷∆≤Œ ˝◊‘’˚∂®
-** œµÕ≥◊ ‘¥£∫
+** ‰ªªÂä°ÂäüËÉΩÔºöÊô∫ËÉΩÂèÇÊï∞Ê†áÂÆö‰∏éÊéßÂà∂ÂèÇÊï∞Ëá™Êï¥ÂÆö
+** ‰ªªÂä°ËØ¥ÊòéÔºöÊô∫ËÉΩÂèÇÊï∞Ê†áÂÆö‰∏éÊéßÂà∂ÂèÇÊï∞Ëá™Êï¥ÂÆö
+** Á≥ªÁªüËµÑÊ∫êÔºö
 **
-** ¥¥ Ω® »À£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2012-03-26
+** Âàõ Âª∫ ‰∫∫ÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2012-03-26
 ** ------------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫
-** –ﬁ∏ƒ ±º‰£∫
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫Ôºö
+** ‰øÆÊîπÊó∂Èó¥Ôºö
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** ------------------------------------------------------------------------------
 *********************************************************************************/
 static void OS_Task_ParameterCalibrationTuning(void *P_arg)
 {
-	/* ±‰¡ø∂®“Â */
+	/* ÂèòÈáèÂÆö‰πâ */
 	uint8_t err;
-	(void)P_arg;
-		
-	/* ≥¨º∂—≠ª∑*/
+	int PWM_Duty_Step=1;
+
+	//ÁªßÁîµÂèçÈ¶àPIDËá™Êï¥ÂÆöÁõ∏ÂÖ≥ÂèòÈáè
+	int Relay_Enable=1;//ÁªßÁîµÊéßÂà∂‰ΩøËÉΩ
+	int Relay_Done=0;//ÁªßÁîµÊéßÂà∂ÂèÇÊï∞Ëæ®ËØÜÂÆåÊàê
+	int32_t Relay_Amp_Up=0;//ÁªßÁîµËæìÂá∫‰∏äÈôê
+	int32_t Relay_Amp_Down=0;//ÁªßÁîµËæìÂá∫‰∏ãÈôê
+	int Relay_Period_Flag=0;//ÁªßÁîµÂë®ÊúüÊ†áËÆ∞ÔºåÂàÜ‰∏∫0Âë®Êúü‰∏é1Âë®ÊúüÔºå‰ª•‰ΩúÁ®≥ÂÆöÂà§Êñ≠
+	int Relay_Flag=0;//ÁªßÁîµËæìÂá∫‰ΩçÁΩÆÊ†áËÆ∞
+	int Pre_Relay_Flag=0;//ÁªßÁîµËæìÂá∫‰ΩçÁΩÆÊ†áËÆ∞
+	int Relay=0; //ÁªßÁîµËæìÂá∫‰ΩçÁΩÆ
+	int Pre_Relay=0; //‰∏ä‰∏ÄÂàªÁªßÁîµËæìÂá∫‰ΩçÁΩÆ
+	int32_t Solenoid_Current_Peak[2]={0,0};//ÁªßÁîµÊéßÂà∂ÁîµÁ£ÅÈìÅÁîµÊµÅ‰∏äÈôêÂÄº
+	int32_t Solenoid_Current_Valley[2]={1500,1500};//ÁªßÁîµÊéßÂà∂ÁîµÁ£ÅÈìÅÁîµÊµÅ‰∏ãÈôêÂÄº
+	int32_t Solenoid_Current_Peak2Peak[2]={0,0};//ÁªßÁîµÊéßÂà∂ÁîµÁ£ÅÈìÅÁîµÊµÅÂ≥∞Â≥∞ÂÄº
+	int32_t Pre_Solenoid_Current_Peak2Peak[2]={0,0};//ÁªßÁîµÊéßÂà∂ÁîµÁ£ÅÈìÅÁîµÊµÅ‰∏äÊó∂ÂàªÂ≥∞Â≥∞ÂÄº
+	int32_t Time_Solenoid_Current_ZCrossing=0;//ÁªßÁîµÊéßÂà∂ÁîµÁ£ÅÈìÅÁîµÊµÅ‰∏äÈôêÂÄºÊó∂Âàª
+	int32_t Pre_Time_Solenoid_Current_ZCrossing=0;//ÁªßÁîµÊéßÂà∂ÁîµÁ£ÅÈìÅÁîµÊµÅ‰∏äÊó∂Âàª‰∏äÈôêÂÄºÊó∂Âàª
+	int32_t Relay_Tu=0;
+	int32_t Relay_Ku=0;
+	int32_t Relay_d=0;
+	int32_t Relay_a=0;
+	//ÁîµÊµÅÁéØPID‰ºòÂåñÊï¥ÂÆö
+	int32_t PID_Tuning_Object=0;
+	int32_t PID_Tuning_Time;
+
+	(void)P_arg;		
+	/* Ë∂ÖÁ∫ßÂæ™ÁéØ*/
+
 	while (DEF_TRUE)
 	{
 //		#if (NCU_ROS_DEBUG>0)
 //			printf("ParameterCalibrationTuning      : start!\n");
 //		#endif
 		SubElements_IndexLED_Output(!IndexLED_Dx[2].IndexLED_State,&IndexLED_Dx[2]);
-		OSTimeDlyHMSM(0, 0, 0, 500);	
+	   	/*ËØªÂèñÂëΩ‰ª§Â≠óÁ¨¶‰∏≤*/
+		if (Flag_New_Receive_Data==1)
+		{
+			sscanf(RecieveDataBuffer,"%[^_]_%[^_]_%[^@]@%d",Comm_Working_Mode,Comm_Function_Type,Comm_Parameter_Name,&Comm_Parameter_Value);
+			Flag_New_Receive_Data=0;
+			printf("%s@_@%s@_@%s@_@%d\n",Comm_Working_Mode,Comm_Function_Type,Comm_Parameter_Name,Comm_Parameter_Value);
+		}
+
+		/*‰ΩúÂèòPWM‰ø°Âè∑ÁöÑÁîµÁ£ÅÈìÅÈò∂Ë∑ÉÂÆûÈ™å*/
+		if ((strcmp(Comm_Working_Mode, "DE")==0) && (strcmp(Comm_Function_Type,"SE")==0) && (strcmp(Comm_Parameter_Name,"SPST")==0))
+		{
+//		 	SubElements_PropertionalSolenoid_PWM_Control(500*PWM_Duty_Step,PWM_Period,&SolenoidB);//Êé•‰∫ÜÁîµÁ£ÅÈìÅ
+			SolenoidA.Input_PWM_duty_radio=500*PWM_Duty_Step;
+			OSTimeDlyHMSM(0, 0, 0, 1000);//Èò∂Ë∑ÉÊ≤øÊó∂Êó∂Èó¥,1ÁßíÈíü
+//			SubElements_PropertionalSolenoid_PWM_Control(0,PWM_Period,&SolenoidB);//Êé•‰∫ÜÁîµÁ£ÅÈìÅ
+			SolenoidA.Input_PWM_duty_radio=0;
+			OSTimeDlyHMSM(0, 0, 0, 1000);//PWMËæìÂá∫0Ê≤øÊó∂Êó∂Èó¥,1ÁßíÈíü
+			PWM_Duty_Step++;
+			if(PWM_Duty_Step>=20)
+			{
+			 	PWM_Duty_Step=0;
+				sprintf(Comm_Working_Mode,"RE");		
+			};
+			//ËÆ∞ÂΩïÁ®≥ÊÄÅÁîµÊµÅÂÄºÂà∞Âç†Á©∫ÊØî-ÁîµÊµÅÁâπÂæÅË°® 
+		}
+
+		/*ÁîµÊµÅÁéØPIDËá™Âä®Êï¥ÂÆö*/
+  		else if ((strcmp(Comm_Working_Mode, "ST")==0) && (strcmp(Comm_Function_Type,"SE")==0) && (strcmp(Comm_Parameter_Name,"SPID")==0))
+		{
+			/*ÁªßÁîµÂèçÈ¶àÊéßÂà∂*/
+			if(Relay_Enable==1)
+			{
+				//ÂèçÈ¶àÊéßÂà∂
+				SolenoidA.Reference_Current=1500;//ÁªßÁîµÂèÇËÄÉÊéßÂà∂ÁîµÊµÅ‰∏∫1.5A,ÂèØÊ†πÊçÆÁîµÊµÅÁâπÂæÅË°®Ëá™Âä®ËµãÂÄº
+				if ((SolenoidA.Reference_Current-SolenoidA.Real_Current)>0)
+				{
+					SolenoidA.Input_PWM_duty_radio=Relay_Amp_Up;//Relay_Amp_UpÂØπÂ∫îÁöÑÁîµ1.5AÁîµÊµÅÂç†Á©∫ÊØî‰∏äÈôê
+					Pre_Relay=Relay; //‰∏ä‰∏ÄÂàªÁªßÁîµËæìÂá∫‰ΩçÁΩÆ
+					Relay=1; //ÁªßÁîµËæìÂá∫‰ΩçÁΩÆ
+					if ((Relay-Pre_Relay)!=0)
+					{
+						Pre_Relay_Flag=Relay_Flag;
+						Relay_Flag=Relay-Pre_Relay;//2
+						if (Relay_Period_Flag==0)Relay_Period_Flag=1;//Ê†áËÆ∞ÁªßÁîµÂë®ÊúüÊ†áÂøó
+						else Relay_Period_Flag=0;
+						Pre_Time_Solenoid_Current_ZCrossing=Time_Solenoid_Current_ZCrossing;
+						Time_Solenoid_Current_ZCrossing=OSTimeGet();//ËÆ∞ÂΩïTime_Solenoid_Current_ZCrossing,Âçï‰Ωçms				
+					};
+				}
+				else
+				{
+					SolenoidA.Input_PWM_duty_radio=Relay_Amp_Down;//Relay_Amp_DownÂØπÂ∫îÁöÑÁîµ1.5AÁîµÊµÅÂç†Á©∫ÊØî‰∏ãÈôê
+					Pre_Relay=Relay; //‰∏ä‰∏ÄÂàªÁªßÁîµËæìÂá∫‰ΩçÁΩÆ
+					Relay=-1; //ÁªßÁîµËæìÂá∫‰ΩçÁΩÆ
+					if ((Relay-Pre_Relay)!=0)
+					{
+						Pre_Relay_Flag=Relay_Flag;
+						Relay_Flag=Relay-Pre_Relay;//-2
+						//ËÆ∞ÂΩïTime_Solenoid_Current_ZCrossing				
+					};
+				};
+				//Âà§Êñ≠ÁªßÁîµÊéßÂà∂Âà∞ËææÁ®≥ÂÆöÊù°‰ª∂ÂèäÂÖ∂Â≥∞ÂÄº‰∏éÂë®ÊúüÁªüËÆ°ÔºåÈááÁî®ËøáÈõ∂Êó∂ÂàªÂà§Êñ≠
+				switch (Relay_Flag)
+				{
+					case 2://ÁªßÁîµÂô®ËæìÂá∫Â§Ñ‰∫éÊ≠£‰ΩçÁΩÆ
+						{
+							if (SolenoidA.Real_Current>Solenoid_Current_Peak[Relay_Period_Flag])
+								{
+									Solenoid_Current_Peak[Relay_Period_Flag]=SolenoidA.Real_Current;
+								};					
+						};break;
+					case -2://ÁªßÁîµÂô®ËæìÂá∫Â§Ñ‰∫éË¥ü‰ΩçÁΩÆ
+						{
+							if (SolenoidA.Real_Current<Solenoid_Current_Valley[Relay_Period_Flag])
+								{
+									Solenoid_Current_Valley[Relay_Period_Flag]=SolenoidA.Real_Current;
+								};						
+						};break;
+					default:break;
+				}
+				//Âà§Êñ≠ÊòØÂê¶ËææÂà∞Á®≥ÂÆöÊù°‰ª∂ÔºåËææÂà∞ÂàôËÆ∞ÂΩïÁõ∏ÂÖ≥Êï∞ÂÄºÔºåÂπ∂ÈááÁî®Z-NÂÖ≥Á≥ªÂºèËÆæËÆ°ÁîµÊµÅÁéØÂàùÂßãPIDÂèÇÊï∞
+				if((Solenoid_Current_Peak[1]-Solenoid_Current_Peak[0])<0.01*Solenoid_Current_Peak[1])
+				{
+					Relay_Tu=Time_Solenoid_Current_ZCrossing-Pre_Time_Solenoid_Current_ZCrossing;//Âçï‰Ωçms					
+					Relay_d=Relay_Amp_Up-Relay_Amp_Down;
+					Relay_a=Solenoid_Current_Peak[1]-Solenoid_Current_Valley[1];
+					Relay_Ku=4*Relay_d/(PI*Relay_a);
+										
+					Relay_Enable=0;
+					SolenoidA.Input_PWM_duty_radio=0;
+					SolenoidB.Input_PWM_duty_radio=0;
+					Relay_Done=1;	  
+				};
+			};
+			//ÁîµÊµÅÈò∂Ë∑ÉÊéßÂà∂			
+			//ÁªôÂÆöPIDÂàùÂßãÂèÇÊï∞ÂÄº(ÈááÁî®ÁªßÁîµÂèçÈ¶àÊ≥ïÁ°ÆÂÆöÂàùÂßãÂÄºÔºåÁ®ãÂ∫è‰∏≠ÈúÄË¶ÅÂä†ÂÖ•Êó∂Èó¥Èáè)
+			if (Relay_Enable==0 && Relay_Done==1)
+			{
+				PID_SolenoidA_Current.KP=0.6*Relay_Ku;
+				PID_SolenoidA_Current.KI=2*PID_SolenoidA_Current.KP/Relay_Tu;
+				PID_SolenoidA_Current.KD=PID_SolenoidA_Current.KP*Relay_Tu/8;
+				SubElements_PropertionalSolenoid_Current_PIDTrack(&PID_SolenoidA_Current,&SolenoidA);//ÊéßÂà∂ÁîµÁ£ÅÈìÅÁîµÊµÅÂà∞ÊåáÂÆöÂÄº(Ëøô‰∏™ÊéßÂà∂Âæ™ÁéØÂ∫îÂú®ÂçïÁã¨ÁöÑ‰∏Ä‰∏™‰ªªÂä°Êàñ‰∏≠Êñ≠‰∏≠ÂÆåÊàê)
+				//ÁõÆÊ†áÂáΩÊï∞ËÆ°ÁÆó
+				PID_Tuning_Object=PID_Tuning_Object+PID_Tuning_Time*abs(SolenoidA.Reference_Current-SolenoidA.Real_Current);								
+			};
+
+
+
+				//ÁîµÊµÅÈò∂Ë∑ÉÁâπÂæÅÁõÆÊ†áÂáΩÊï∞ÂÄºÊòØÂê¶Êª°Ë∂≥Ë¶ÅÊ±Ç„ÄÇÊòØÔºöÂÅúÊ≠¢Ëá™Êï¥ÂÆöÔºåËÆ∞ÂΩïPIDÂèÇÊï∞ÔºõÂê¶Ôºö‰øÆÊîπPIDÂèÇÊï∞„ÄÇ
+					//ÈááÁî®Ê¢ØÂ∫¶Ê≥ï‰øÆÊîπPIDÂèÇÊï∞		
+		}
+
+		/*Ê≠ªÂå∫ÁîµÊµÅË°®ÂæÅÊ£ÄÊµã*/
+//		else if ((strcmp(Comm_Working_Mode, "ST")==0) && (strcmp(Comm_Function_Type,"EL")==0) && (strcmp(Comm_Parameter_Name,"PVDT")==0))
+//		{
+//			Elements_MainValvePosition_Acquisition(&MainValve);//ÈááÈõÜ‰∏ªÈòÄ‰ΩçÁßª‰ø°Âè∑
+//			MainValve->Spool_Position_Real;//ÈááÈõÜ‰∏ªÈòÄ‰ΩçÁßª‰ø°Âè∑
+//						
+//			SubElements_PropertionalSolenoid_Current_Filter_Acquisition(&SolenoidA); //ÈááÈõÜÁîµÁ£ÅÈìÅÁîµÊµÅ‰ø°Âè∑
+//			Solenoid->Real_Current;//ÈááÈõÜÁîµÁ£ÅÈìÅÁîµÊµÅ‰ø°Âè∑
+//			
+//			SubElements_PropertionalSolenoid_Current_PIDTrack(&PID_SolenoidA_Current,&SolenoidA);//ÊéßÂà∂ÁîµÁ£ÅÈìÅÁîµÊµÅÂà∞ÊåáÂÆöÂÄº(Ëøô‰∏™ÊéßÂà∂Âæ™ÁéØÂ∫îÂú®ÂçïÁã¨ÁöÑ‰∏Ä‰∏™‰ªªÂä°Êàñ‰∏≠Êñ≠‰∏≠ÂÆåÊàê)	
+//			SolenoidA->Reference_Current=0;//ÊéßÂà∂ÁîµÁ£ÅÈìÅÁîµÊµÅÂà∞ÊåáÂÆöÂÄº
+
+			//Âà§Êñ≠‰∏ªÈòÄÊòØÂê¶Âú®‰∏≠‰Ωç„ÄÇÊòØÔºöÂºÄÂßãÊ†áÂÆöÔºõÂê¶ÔºöËøîÂõûÈîôËØÜÊàñÊåáÁ§∫„ÄÇ
+			//ÁºìÊÖ¢Â¢ûÂ§ßAÁîµÁ£ÅÈìÅÁîµÊµÅÂÄºÔºåÊ≠§Êó∂‰∏∫ÁîµÊµÅÁéØÊéßÂà∂Ê®°Âºè
+			//ËßÇÂØü‰∏ªÈòÄ‰ΩçÁßªÊòØÂê¶Ë∂ÖËøáÈòàÂÄº„ÄÇÊòØÔºöËÆ∞ÂΩïÁîµÊµÅÊï∞ÊçÆÔºõÂê¶ÔºöÁªßÁª≠Â¢ûÂ§ßÁîµÊµÅÂÄº„ÄÇ
+			//ËÆ∞ÂΩïÁîµÊµÅÂÄºÂà∞‰∏≠‰ΩçPÂè£Ê≠ªÂå∫ÂèòÈáèPR„ÄÇ
+			//ÊéßÂà∂‰∏ªÈòÄ‰ΩçÁßªÂú®‰∏ªÈòÄ‰∏≠‰ΩçÊ≠ªÂå∫ËÆæÂÆöÂÄºÔºåÊ≠§Êó∂‰∏∫‰ΩçÁΩÆÁéØÊéßÂà∂Ê®°ÂºèÔºåÂπ∂Âà§Êñ≠ÁîµÊµÅÂÄºÁ®≥ÂÆö
+			//ÁºìÊÖ¢ÂáèÂ∞èAÁîµÁ£ÅÈìÅÁîµÊµÅÂÄºÔºåÊ≠§Êó∂‰∏∫ÁîµÊµÅÁéØÊéßÂà∂Ê®°Âºè
+			//ËßÇÂØü‰∏ªÈòÄ‰ΩçÁßªÊòØÂê¶Ë∂ÖËøáÈòàÂÄº„ÄÇÊòØÔºöËÆ∞ÂΩïÁîµÊµÅÊï∞ÊçÆÔºõÂê¶ÔºöÁªßÁª≠ÂáèÂ∞èÁîµÊµÅÂÄº„ÄÇ
+			//ËÆ∞ÂΩïÁîµÊµÅÂÄºÂà∞‰∏≠‰ΩçTÂè£Ê≠ªÂå∫ÂèòÈáèTR„ÄÇ
+
+			//Âà§Êñ≠‰∏ªÈòÄÊòØÂê¶Âú®‰∏≠‰Ωç„ÄÇÊòØÔºöÂºÄÂßãÊ†áÂÆöÔºõÂê¶ÔºöËøîÂõûÈîôËØÜÊàñÊåáÁ§∫„ÄÇ
+			//ÁºìÊÖ¢Â¢ûÂ§ßBÁîµÁ£ÅÈìÅÁîµÊµÅÂÄºÔºåÊ≠§Êó∂‰∏∫ÁîµÊµÅÁéØÊéßÂà∂Ê®°Âºè
+			//ËßÇÂØü‰∏ªÈòÄ‰ΩçÁßªÊòØÂê¶Ë∂ÖËøáÈòàÂÄº„ÄÇÊòØÔºöËÆ∞ÂΩïÁîµÊµÅÊï∞ÊçÆÔºõÂê¶ÔºöÁªßÁª≠Â¢ûÂ§ßÁîµÊµÅÂÄº„ÄÇ
+			//ËÆ∞ÂΩïÁîµÊµÅÂÄºÂà∞‰∏≠‰ΩçPÂè£Ê≠ªÂå∫ÂèòÈáèPL„ÄÇ
+			//ÊéßÂà∂‰∏ªÈòÄ‰ΩçÁßªÂú®‰∏ªÈòÄ‰∏≠‰ΩçÊ≠ªÂå∫ËÆæÂÆöÂÄºÔºåÊ≠§Êó∂‰∏∫‰ΩçÁΩÆÁéØÊéßÂà∂Ê®°ÂºèÔºåÂπ∂Âà§Êñ≠ÁîµÊµÅÂÄºÁ®≥ÂÆö
+			//ÁºìÊÖ¢ÂáèÂ∞èAÁîµÁ£ÅÈìÅÁîµÊµÅÂÄºÔºåÊ≠§Êó∂‰∏∫ÁîµÊµÅÁéØÊéßÂà∂Ê®°Âºè
+			//ËßÇÂØü‰∏ªÈòÄ‰ΩçÁßªÊòØÂê¶Ë∂ÖËøáÈòàÂÄº„ÄÇÊòØÔºöËÆ∞ÂΩïÁîµÊµÅÊï∞ÊçÆÔºõÂê¶ÔºöÁªßÁª≠ÂáèÂ∞èÁîµÊµÅÂÄº„ÄÇ
+			//ËÆ∞ÂΩïÁîµÊµÅÂÄºÂà∞‰∏≠‰ΩçTÂè£Ê≠ªÂå∫ÂèòÈáèTL„ÄÇ
+//		}
+
+		OSTimeDlyHMSM(0, 0, 0, 200);	
 	};	
 }
 
 /********************************************************************************
-**                          OS_Task_Log »ŒŒÒ
+**                          OS_Task_Log ‰ªªÂä°
 **
-** »ŒŒÒπ¶ƒ‹£∫»’÷æº«¬º»ŒŒÒ
-** »ŒŒÒÀµ√˜£∫»’÷æº«¬º»ŒŒÒ
-** œµÕ≥◊ ‘¥£∫
+** ‰ªªÂä°ÂäüËÉΩÔºöÊó•ÂøóËÆ∞ÂΩï‰ªªÂä°
+** ‰ªªÂä°ËØ¥ÊòéÔºöÊó•ÂøóËÆ∞ÂΩï‰ªªÂä°
+** Á≥ªÁªüËµÑÊ∫êÔºö
 **
-** ¥¥ Ω® »À£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2012-03-26
+** Âàõ Âª∫ ‰∫∫ÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2012-03-26
 ** ------------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫
-** –ﬁ∏ƒ ±º‰£∫
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫Ôºö
+** ‰øÆÊîπÊó∂Èó¥Ôºö
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** ------------------------------------------------------------------------------
 *********************************************************************************/
 static void OS_Task_Log(void *P_arg)
 {
-	/* ±‰¡ø∂®“Â */
+	/* ÂèòÈáèÂÆö‰πâ */
 	uint8_t err;
 	(void)P_arg;
 		
-	/* ≥¨º∂—≠ª∑*/
+	/* Ë∂ÖÁ∫ßÂæ™ÁéØ*/
 	while (DEF_TRUE)
 	{
 //		#if (NCU_ROS_DEBUG>0)
@@ -447,33 +616,42 @@ static void OS_Task_Log(void *P_arg)
 }
 
 /********************************************************************************
-**                          OS_Task_Communication »ŒŒÒ
+**                          OS_Task_Communication ‰ªªÂä°
 **
-** »ŒŒÒπ¶ƒ‹£∫Õ®–≈Ωªª•»ŒŒÒ
-** »ŒŒÒÀµ√˜£∫Õ®–≈Ωªª•»ŒŒÒ
-** œµÕ≥◊ ‘¥£∫
+** ‰ªªÂä°ÂäüËÉΩÔºöÈÄö‰ø°‰∫§‰∫í‰ªªÂä°
+** ‰ªªÂä°ËØ¥ÊòéÔºöÈÄö‰ø°‰∫§‰∫í‰ªªÂä°
+** Á≥ªÁªüËµÑÊ∫êÔºö
 **
-** ¥¥ Ω® »À£∫¬Ω’Ò”Ó
-** ¥¥Ω® ±º‰£∫2012-03-26
+** Âàõ Âª∫ ‰∫∫ÔºöÈôÜÊåØÂÆá
+** ÂàõÂª∫Êó∂Èó¥Ôºö2016-10-10
 ** ------------------------------------------------------------------------------
-** –ﬁ ∏ƒ »À£∫
-** –ﬁ∏ƒ ±º‰£∫
-** –ﬁ∏ƒÀµ√˜£∫
+** ‰øÆ Êîπ ‰∫∫Ôºö
+** ‰øÆÊîπÊó∂Èó¥Ôºö
+** ‰øÆÊîπËØ¥ÊòéÔºö
 ** ------------------------------------------------------------------------------
 *********************************************************************************/
 static void OS_Task_Communication(void *P_arg)
 {
-	/* ±‰¡ø∂®“Â */
+	/* ÂèòÈáèÂÆö‰πâ */
 	uint8_t err;
 	(void)P_arg;
 		
-	/* ≥¨º∂—≠ª∑*/
+	/* Ë∂ÖÁ∫ßÂæ™ÁéØ*/
 	while (DEF_TRUE)
 	{
 //		#if (NCU_ROS_DEBUG>0)
 //			printf("Communication      : start!\n");
 //		#endif
+//		printf("R_Data:%s \n",RecieveDataBuffer);
+//		printf("R_Data:");
+//		Communication_sprintf(RecieveDataBuffer);
+//		printf("\n");
+//		printf("B_up:%d ",SolenoidB.UpEdge_Current);
+//		printf("B_down:%d ",SolenoidB.DownEdge_Current);
+//		printf("B_L:%d ",SolenoidB.Inductance);
+//		printf("\n ");
 		SubElements_IndexLED_Output(!IndexLED_Dx[4].IndexLED_State,&IndexLED_Dx[4]);
 		OSTimeDlyHMSM(0, 0, 0, 500);	
 	};	
 }
+
